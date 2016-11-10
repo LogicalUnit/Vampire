@@ -9,7 +9,7 @@ package vtr2;
  *
  * @author John
  */
-public class Vampire2nd {
+public class Vampire {
 
     /**
      * @param args the command line arguments
