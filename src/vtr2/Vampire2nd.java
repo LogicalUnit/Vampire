@@ -19,6 +19,8 @@ public class Vampire2nd {
               
         //String attribute = Attributes.getAttributeByTypes(Attributes.FINESSE, Attributes.SOCIAL);
         
+        int john_rules = 1;
+        
         Character jim = new Character();
                 
         
