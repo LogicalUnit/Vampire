@@ -36,6 +36,7 @@ public class Skills {
     public static final String SOCIAL = "Social";
     
     public static final String ERROR = "Skill Error";
+        
     
     
     public static String getSkillType(String name) {

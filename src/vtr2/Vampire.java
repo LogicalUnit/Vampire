@@ -5,6 +5,8 @@
  */
 package vtr2;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author John
@@ -19,10 +21,20 @@ public class Vampire {
               
         //String attribute = Attributes.getAttributeByTypes(Attributes.FINESSE, Attributes.SOCIAL);
         
-        int john_rules = 1;
+//        int john_rules = 1;
         
         Character jim = new Character();
                 
+        
+        ArrayList<String> specialties = jim.getSpecialties(Skills.ACADEMICS);
+        
+        
+        
+        for(int i = 0; i < specialties.size(); i++) {
+            System.out.println(specialties.get(i));
+        }
+        
+//        System.out.println("It ran");
         
         //int dots = jim.attributes.get(Attributes.).ordinal();
         
@@ -30,10 +42,10 @@ public class Vampire {
         
         //Dots computer = jim.getAttributeDots(Attributes.COMPOSURE);
         
-        Dots temp = Dots.ONE;
-        
-        
-        System.out.println(temp);
+//        Dots temp = jim.getAttributeDots(Attributes.WITS);
+//        
+//        
+//        System.out.println(temp);
         
         
         
