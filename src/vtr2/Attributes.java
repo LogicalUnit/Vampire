@@ -23,36 +23,40 @@ public class Attributes {
     public static final String COMPOSURE = "Composure";
     
     //Rows
-    public static final String POWER = "Power";
-    public static final String FINESSE = "Finesse";
-    public static final String RESISTANCE = "Resistance";  
+    public class Rows {
+        public static final String POWER = "Power";
+        public static final String FINESSE = "Finesse";
+        public static final String RESISTANCE = "Resistance";  
+    }
     
     //Columns
-    public static final String MENTAL = "Mental";
-    public static final String PHYSICAL = "Physical";
-    public static final String SOCIAL = "Social";
+    public class Cols {
+        public static final String MENTAL = "Mental";
+        public static final String PHYSICAL = "Physical";
+        public static final String SOCIAL = "Social";
+    }
           
     
     public static String getAttributeByTypes(String row, String col) {
         
         switch(row) {
-            case POWER:
+            case Rows.POWER:
                 switch (col) {
-                    case MENTAL: return INTELLIGENCE;
-                    case PHYSICAL: return STRENGTH;
-                    case SOCIAL: return PRESENCE;                    
+                    case Cols.MENTAL: return INTELLIGENCE;
+                    case Cols.PHYSICAL: return STRENGTH;
+                    case Cols.SOCIAL: return PRESENCE;                    
                 }
-            case FINESSE:
+            case Rows.FINESSE:
                 switch (col) {
-                    case MENTAL: return WITS;
-                    case PHYSICAL: return DEXTERITY;
-                    case SOCIAL: return MANIPULATION;                    
+                    case Cols.MENTAL: return WITS;
+                    case Cols.PHYSICAL: return DEXTERITY;
+                    case Cols.SOCIAL: return MANIPULATION;                    
                 }
-            case RESISTANCE:
+            case Rows.RESISTANCE:
                 switch(col) {
-                    case MENTAL: return RESOLVE;
-                    case PHYSICAL: return STAMINA;
-                    case SOCIAL: return COMPOSURE;                    
+                    case Cols.MENTAL: return RESOLVE;
+                    case Cols.PHYSICAL: return STAMINA;
+                    case Cols.SOCIAL: return COMPOSURE;                    
                 }            
         }
         

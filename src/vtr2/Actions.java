@@ -22,7 +22,7 @@ public class Actions {
         int unskilled_penalty = 0;
         
         if (skill_dice == 0) {
-            if (Skills.getSkillType(skill) == Skills.MENTAL) {
+            if (Skills.getSkillType(skill) == Skills.Types.MENTAL) {
                 unskilled_penalty = -3;
             } else {
                 unskilled_penalty = -1;

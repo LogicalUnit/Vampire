@@ -27,8 +27,9 @@ public class Vampire {
 //                
 //        
 //        ArrayList<String> specialties = jim.getSpecialties(Skills.ACADEMICS);
-//        
-          String test = Attributes.getAttributeByTypes("blah", Attributes.MENTAL);
+//                   
+          //String test = Attributes.getAttributeByTypes(Attributes.Rows.FINESSE, Attributes.Cols.SOCIAL);
+          String test = Skills.getSkillType(Skills.MEDECINE);
           
           System.out.println(test);
 //        

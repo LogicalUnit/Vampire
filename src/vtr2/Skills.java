@@ -30,10 +30,13 @@ public class Skills {
     //Names, Social
     public static final String ANIMAL_KEN = "Animal Ken";
     
+    public class Types {        
+        public static final String MENTAL = "Mental";
+        public static final String PHYSICAL = "Physical";
+        public static final String SOCIAL = "Social";
+    }
     //Types
-    public static final String MENTAL = "Mental";
-    public static final String PHYSICAL = "Physical";
-    public static final String SOCIAL = "Social";
+   
                
     
     public static String getSkillType(String name) {
@@ -45,11 +48,11 @@ public class Skills {
             case MEDECINE:
             case OCCULT:
             case POLITICS:
-            case SCIENCE: return MENTAL;
+            case SCIENCE: return Types.MENTAL;
             
-            case ATHLETICS: return PHYSICAL;
+            case ATHLETICS: return Types.PHYSICAL;
             
-            case ANIMAL_KEN: return SOCIAL;
+            case ANIMAL_KEN: return Types.SOCIAL;
                                                         
         }
         
