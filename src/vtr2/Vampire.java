@@ -23,16 +23,18 @@ public class Vampire {
         
 //        int john_rules = 1;
         
-        Character jim = new Character();
-                
-        
-        ArrayList<String> specialties = jim.getSpecialties(Skills.ACADEMICS);
-        
-        
-        
-        for(int i = 0; i < specialties.size(); i++) {
-            System.out.println(specialties.get(i));
-        }
+//        Character jim = new Character();
+//                
+//        
+//        ArrayList<String> specialties = jim.getSpecialties(Skills.ACADEMICS);
+//        
+          String test = Attributes.getAttributeByTypes("blah", Attributes.MENTAL);
+          
+          System.out.println(test);
+//        
+//        for(int i = 0; i < specialties.size(); i++) {
+//            System.out.println(specialties.get(i));
+//        }
         
 //        System.out.println("It ran");
         

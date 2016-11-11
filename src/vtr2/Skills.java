@@ -34,10 +34,7 @@ public class Skills {
     public static final String MENTAL = "Mental";
     public static final String PHYSICAL = "Physical";
     public static final String SOCIAL = "Social";
-    
-    public static final String ERROR = "Skill Error";
-        
-    
+               
     
     public static String getSkillType(String name) {
         switch(name) {
@@ -53,11 +50,10 @@ public class Skills {
             case ATHLETICS: return PHYSICAL;
             
             case ANIMAL_KEN: return SOCIAL;
-                                    
-            default: //do nothing                            
+                                                        
         }
         
-        return ERROR;
+        return null;
     }
             
     

@@ -13,11 +13,11 @@ public enum Dots {
     
     ZERO, ONE, TWO, THREE, FOUR, FIVE; //use ordinal() to get integer
                                   
-    public static Dots toDots(int ordinal) throws Exception
+    public static Dots toDots(int ordinal) 
     {
         if (ordinal >= 0 && ordinal <= 5)
             return Dots.values()[ordinal];                        
 
-        throw new Exception("Dots must be between 0 and 5");
+        return null;
     }
 }

@@ -31,9 +31,7 @@ public class Attributes {
     public static final String MENTAL = "Mental";
     public static final String PHYSICAL = "Physical";
     public static final String SOCIAL = "Social";
-    
-    
-    public static final String ERROR = "Attribute Error";
+          
     
     public static String getAttributeByTypes(String row, String col) {
         
@@ -42,27 +40,23 @@ public class Attributes {
                 switch (col) {
                     case MENTAL: return INTELLIGENCE;
                     case PHYSICAL: return STRENGTH;
-                    case SOCIAL: return PRESENCE;
-                    default: //break;
+                    case SOCIAL: return PRESENCE;                    
                 }
             case FINESSE:
                 switch (col) {
                     case MENTAL: return WITS;
                     case PHYSICAL: return DEXTERITY;
-                    case SOCIAL: return MANIPULATION;
-                    default: //break;
+                    case SOCIAL: return MANIPULATION;                    
                 }
             case RESISTANCE:
                 switch(col) {
                     case MENTAL: return RESOLVE;
                     case PHYSICAL: return STAMINA;
-                    case SOCIAL: return COMPOSURE;
-                    default: //break;
-                }
-            default: //do nothing
+                    case SOCIAL: return COMPOSURE;                    
+                }            
         }
         
-        return ERROR;
+        return null;
     }
            
 }
