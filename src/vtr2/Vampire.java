@@ -29,7 +29,7 @@ public class Vampire {
 //        ArrayList<String> specialties = jim.getSpecialties(Skills.ACADEMICS);
 //                   
           //String test = Attributes.getAttributeByTypes(Attributes.Rows.FINESSE, Attributes.Cols.SOCIAL);
-          String test = Skills.getSkillType(Skills.MEDECINE);
+          String test = Disciplines.CELERITY;
           
           System.out.println(test);
 //        
