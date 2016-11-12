@@ -5,9 +5,6 @@
  */
 package vtr2;
 
-//This is a modification
-//Check the user settings
-
 /**
  *
  * @author John
