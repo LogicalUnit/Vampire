@@ -5,7 +5,6 @@
  */
 package vtr2;
 
-import java.util.HashMap;
 import java.util.ArrayList;
 /**
  *
@@ -13,8 +12,11 @@ import java.util.ArrayList;
  */
 public class Character {
     
-    HashMap<String, Dots> attributes = new HashMap<String, Dots>();
-    HashMap<String, Dots> skills = new HashMap<String, Dots>();
+    DottedTrait attributes = new DottedTrait();
+    DottedTrait skills = new DottedTrait();
+    DottedTrait disciplines = new DottedTrait();
+    DottedTrait merits = new DottedTrait();
+    
     ArrayList<Specialty> specialties = new ArrayList<Specialty>();
     
     public Dots getAttributeDots(String name) {
@@ -25,14 +27,22 @@ public class Character {
         return skills.get(name);
     }
     
+    public Dots getDisciplineDots(String name) {
+        return disciplines.get(name);
+    }
+    
+    public Dots getMeritDots(String name) {
+        return merits.get(name);
+    }
+    
     public ArrayList<String> getSpecialties(String skill) {
         ArrayList<String> result = new ArrayList<String>();
         
         for (int i = 0; i < specialties.size(); i++) {
-            Specialty current = specialties.get(i);
-            if (current.skill == skill)
+            Specialty spec = specialties.get(i);
+            if (spec.skill == skill)
             {
-                result.add(current.name);
+                result.add(spec.name);
             }
         }
         
@@ -76,6 +86,13 @@ public class Character {
         specialties.add(new Specialty(Skills.COMPUTER, "Software Engineering"));
         specialties.add(new Specialty(Skills.COMPUTER, "Reverse Engineering"));
         specialties.add(new Specialty(Skills.ACADEMICS, "Libraries"));
+        
+        //Disciplines
+        disciplines.put(Disciplines.DOMINATE, Dots.THREE);
+        
+
+        //Merits
+        merits.put(Merits.ACUTE_SENSES, Dots.FIVE);
                                 
     }
     

@@ -24,7 +24,7 @@ public class Skills {
     public static final String POLITICS = "Politics";
     public static final String SCIENCE = "Science";
             
-    //Names, Pysical
+    //Names, Physical
     public static final String ATHLETICS = "Athletics";
     
     //Names, Social

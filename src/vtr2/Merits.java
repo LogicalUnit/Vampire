@@ -9,13 +9,8 @@ package vtr2;
  *
  * @author John
  */
-public class Specialty {
-        
-    public Specialty(String skill, String name) {
-        this.skill = skill;
-        this.name = name;
-    }
-
-    String skill;
-    String name;
+public class Merits {
+    
+    public static final String ACUTE_SENSES = "Acute Senses";
+    
 }

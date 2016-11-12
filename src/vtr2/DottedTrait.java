@@ -5,17 +5,12 @@
  */
 package vtr2;
 
+import java.util.HashMap;
+
 /**
  *
  * @author John
  */
-public class Specialty {
-        
-    public Specialty(String skill, String name) {
-        this.skill = skill;
-        this.name = name;
-    }
-
-    String skill;
-    String name;
+public class DottedTrait extends HashMap<String, Dots> {
+    
 }
