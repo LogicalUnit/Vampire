@@ -56,32 +56,19 @@ public class Character {
     public void setup() {
         
         //Attributes
-        attributes.put(Attributes.INTELLIGENCE, Dots.THREE);
-        attributes.put(Attributes.STRENGTH, Dots.ONE);
-        attributes.put(Attributes.PRESENCE, Dots.ONE);
-        attributes.put(Attributes.WITS, Dots.ONE);        
-        attributes.put(Attributes.DEXTERITY, Dots.ONE);
-        attributes.put(Attributes.MANIPULATION, Dots.ONE);
-        attributes.put(Attributes.RESOLVE, Dots.ONE);
-        attributes.put(Attributes.STAMINA, Dots.ONE);
-        attributes.put(Attributes.COMPOSURE, Dots.TWO);
+        ArrayList<String> attributesList = Attributes.getList();
         
-        //Mental Skills
-        skills.put(Skills.ACADEMICS, Dots.ZERO);
-        skills.put(Skills.COMPUTER, Dots.ONE);
-        skills.put(Skills.CRAFTS, Dots.ZERO);
-        skills.put(Skills.INVESTIGATION, Dots.ZERO);
-        skills.put(Skills.MEDECINE, Dots.ZERO);
-        skills.put(Skills.OCCULT, Dots.ZERO);
-        skills.put(Skills.POLITICS, Dots.ZERO);
-        skills.put(Skills.SCIENCE, Dots.ZERO);
+        for(int i = 0; i < attributesList.size(); i++) {
+            attributes.put(attributesList.get(i), Dots.ONE);
+        }
+                
+        //Skills
+        ArrayList<String> skillsList = Skills.getList();
         
-        //Physical Skills
-        skills.put(Skills.ATHLETICS, Dots.ZERO);
-        
-        //Social Skills        
-        skills.put(Skills.ANIMAL_KEN, Dots.ZERO);
-        
+        for(int i = 0; i < skillsList.size(); i++) {
+            skills.put(skillsList.get(i), Dots.ZERO);
+        }
+                        
         //Specialties        
         specialties.add(new Specialty(Skills.COMPUTER, "Software Engineering"));
         specialties.add(new Specialty(Skills.COMPUTER, "Reverse Engineering"));
@@ -92,7 +79,7 @@ public class Character {
         
 
         //Merits
-        merits.put(Merits.ACUTE_SENSES, Dots.FIVE);
+        merits.put(Merits.ACUTE_SENSES, Dots.ONE);
                                 
     }
     
