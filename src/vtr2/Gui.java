@@ -17,7 +17,9 @@ public class Gui implements Runnable {
     
     private JFrame mainFrame;    
     private AttributesPanel attributes;
-    private Character vampire = new Character();
+    //private Character vampire = new Character();
+    //private Character vampire = new Ventrue();
+    private Character vampire = new Gangrel();
     
     public Gui () {
         

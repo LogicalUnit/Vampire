@@ -51,6 +51,7 @@ public class Character {
     
     public Character() {
         setup();
+        customSetup();
     }
     
     public void setup() {
@@ -82,6 +83,9 @@ public class Character {
         merits.put(Merits.ACUTE_SENSES, Dots.ONE);
                                 
     }
+    
+    //Override me with custom attributes, skills, etc.
+    public void customSetup() {};
     
     
     
