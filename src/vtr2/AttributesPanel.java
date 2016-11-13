@@ -24,17 +24,27 @@ public class AttributesPanel extends JPanel {
     public void refresh(Character vampire) {
         String result = "<html><table>" +  
                 "<tr>" +
+                "<td>" + //empty
+                "<td>" + Attributes.Cols.MENTAL.toUpperCase() + "<td>" +
+                "<td>" + Attributes.Cols.PHYSICAL.toUpperCase() + "<td>" +
+                "<td>" + Attributes.Cols.SOCIAL.toUpperCase() + "<td>" +                
+                "<tr>" +  
+                "<td>" + Attributes.Rows.POWER.toUpperCase() +
                 "<td>" + attrString(Attributes.INTELLIGENCE, vampire) + 
-                "<td>" +attrString(Attributes.STRENGTH, vampire) + 
-                "<td>" +attrString(Attributes.PRESENCE, vampire) + 
+                "<td>" + attrString(Attributes.STRENGTH, vampire) + 
+                "<td>" + attrString(Attributes.PRESENCE, vampire) + 
                 "<tr>" +
-                "<td>" +attrString(Attributes.WITS, vampire) + 
-                "<td>" +attrString(Attributes.DEXTERITY, vampire) + 
-                "<td>" +attrString(Attributes.MANIPULATION, vampire) + 
+                "<td>" + Attributes.Rows.FINESSE.toUpperCase() +
+                "<td>" + attrString(Attributes.WITS, vampire) + 
+                "<td>" + attrString(Attributes.DEXTERITY, vampire) + 
+                "<td>" + attrString(Attributes.MANIPULATION, vampire) + 
                 "<tr>" +
-                "<td>" +attrString(Attributes.RESOLVE, vampire) + 
-                "<td>" +attrString(Attributes.STAMINA, vampire) + 
-                "<td>" +attrString(Attributes.COMPOSURE, vampire) + "</table></html>";
+                "<td>" + Attributes.Rows.RESISTANCE.toUpperCase() +
+                "<td>" + attrString(Attributes.RESOLVE, vampire) + 
+                "<td>" + attrString(Attributes.STAMINA, vampire) + 
+                "<td>" + attrString(Attributes.COMPOSURE, vampire) + 
+                "</table></html>";
+        
         attrLab.setText(result);                
     }
     
