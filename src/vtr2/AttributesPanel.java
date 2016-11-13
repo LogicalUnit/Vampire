@@ -22,7 +22,8 @@ public class AttributesPanel extends JPanel {
         }
     
     public void refresh(Character vampire) {
-        String result = "<html><table>" +  
+        String result = 
+                "<html><table>" +  
                 "<tr>" +
                 "<td>" + //empty
                 "<td>" + Attributes.Cols.MENTAL.toUpperCase() + "<td>" +
