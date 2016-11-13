@@ -17,12 +17,12 @@ public class AttributesPanel extends JPanel {
     private JLabel attrLab = new JLabel();
     
     private String attrString(String name, Character vamp) {
-            String result = name + ": <td>" + vamp.getAttributeDots(name).ordinal();
+            String result = name + ":<td>" + vamp.getAttributeDots(name);
             return result;
         }
     
     public void refresh(Character vampire) {
-        String result = "<html><table border=0 cellpadding=3 cellspacing=3" +  
+        String result = "<html><table>" +  
                 "<tr>" +
                 "<td>" + attrString(Attributes.INTELLIGENCE, vampire) + 
                 "<td>" +attrString(Attributes.STRENGTH, vampire) + 
