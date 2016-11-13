@@ -5,6 +5,7 @@
  */
 package vtr2;
 
+import java.util.ArrayList;
 /**
  *
  * @author John
@@ -34,6 +35,22 @@ public class Attributes {
         public static final String MENTAL = "Mental";
         public static final String PHYSICAL = "Physical";
         public static final String SOCIAL = "Social";
+    }
+    
+    public static ArrayList<String> getList() {
+        ArrayList<String> attributes = new ArrayList<String>();
+        
+        attributes.add(INTELLIGENCE);
+        attributes.add(STRENGTH);
+        attributes.add(PRESENCE);
+        attributes.add(WITS);
+        attributes.add(DEXTERITY);
+        attributes.add(MANIPULATION);
+        attributes.add(RESOLVE);
+        attributes.add(STAMINA);
+        attributes.add(COMPOSURE);
+        
+        return attributes;
     }
           
     

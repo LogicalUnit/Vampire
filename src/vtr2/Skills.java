@@ -5,6 +5,8 @@
  */
 package vtr2;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author John
@@ -32,8 +34,25 @@ public class Skills {
         public static final String PHYSICAL = "Physical";
         public static final String SOCIAL = "Social";
     }
-    //Types
    
+    public static ArrayList<String> getList() {
+        ArrayList<String> skills = new ArrayList<String>();
+        
+        skills.add(ACADEMICS);
+        skills.add(COMPUTER);
+        skills.add(CRAFTS);
+        skills.add(INVESTIGATION);
+        skills.add(MEDECINE);
+        skills.add(OCCULT);
+        skills.add(POLITICS);
+        skills.add(SCIENCE);
+        
+        skills.add(ATHLETICS);
+        
+        skills.add(ANIMAL_KEN);
+        
+        return skills;
+    }
                
     
     public static String getSkillType(String name) {
