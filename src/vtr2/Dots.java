@@ -13,7 +13,7 @@ public enum Dots {
     
     ZERO, ONE, TWO, THREE, FOUR, FIVE; //use ordinal() to get integer
                                   
-    public static Dots toDots(int ordinal) 
+    public static Dots fromInt(int ordinal) 
     {
         if (ordinal >= 0 && ordinal <= 5)
             return Dots.values()[ordinal];                        

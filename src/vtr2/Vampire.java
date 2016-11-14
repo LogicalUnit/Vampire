@@ -18,14 +18,14 @@ public class Vampire {
      */
     public static void main(String[] args) {
         
-        //Character vampire = new Gangrel();
-        //Gui test = new Gui(vampire);
+        Character vampire = new Ventrue();
+        Gui test = new Gui(vampire);
         
-        ArrayList<String> disciplinesList = Disciplines.getList();
-        
-        for(String discipline : disciplinesList) {
-            System.out.println(discipline);
-        }
+//        ArrayList<String> disciplinesList = Disciplines.getList();
+//        
+//        for(String discipline : disciplinesList) {
+//            System.out.println(discipline);
+//        }
       
         
     }
