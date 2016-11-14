@@ -55,6 +55,12 @@ public class Character {
         return result;
     }
     
+    public ArrayList<String> getMerits() {
+        ArrayList<String> result = new ArrayList<String>();
+        result.addAll(merits.keySet());
+        return result;
+    }
+    
     public Character() {
         setup();
         customSetup();
@@ -81,12 +87,10 @@ public class Character {
         specialties.add(new Specialty(Skills.COMPUTER, "Reverse Engineering"));
         specialties.add(new Specialty(Skills.ACADEMICS, "Libraries"));
         
-        //Disciplines
-        disciplines.put(Disciplines.AUSPEX, Dots.THREE);
+        
         
 
-        //Merits
-        merits.put(Merits.ACUTE_SENSES, Dots.ONE);
+        
                                 
     }
     
