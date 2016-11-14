@@ -46,8 +46,8 @@ public class SkillsPanel extends JPanel {
             if (Skills.getSkillType(skill) == type) {
                 
                 result += "<tr>";
-                result += "<td>" + skill + ":";
-                result += "<td>" + vampire.getSkillDots(skill);
+                result += "<td width=\"100\">" + skill + ":";
+                result += "<td width=\"40\">" + vampire.getSkillDots(skill);
                         
             }
                         
