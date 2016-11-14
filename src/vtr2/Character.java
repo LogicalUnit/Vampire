@@ -43,15 +43,7 @@ public class Character {
             {
                 result.add(spec.name);
             }
-        }
-        
-//        for (int i = 0; i < specialties.size(); i++) {
-//            Specialty spec = specialties.get(i);
-//            if (spec.skill == skill)
-//            {
-//                result.add(spec.name);
-//            }
-//        }
+        }       
         
         return result;
     }
