@@ -19,20 +19,12 @@ import java.awt.Component;
 public class SkillsPanel extends JPanel {
     
     private JLabel skillsLab = new JLabel();
-    private JLabel title = new JLabel();
     private String type;
     
     public SkillsPanel(Character vampire, String type) {
         this.type = type;
-//        setBorder(BorderFactory.createTitledBorder(type));
-        title.setText(type.toUpperCase());
-        
-//        setLayout(new BorderLayout());
-//        title.setAlignmentX(Component.CENTER_ALIGNMENT);
-        //add(title, BorderLayout.NORTH);
         add(skillsLab);
-        refresh(vampire);   
-        
+        refresh(vampire);           
     }
     
     public void refresh(Character vampire) {
