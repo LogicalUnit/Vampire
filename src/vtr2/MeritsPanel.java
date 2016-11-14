@@ -26,10 +26,8 @@ public class MeritsPanel extends JPanel {
     public void refresh(Character vampire) {
         
         String result = "<html><table>";
-        
-        ArrayList<String> meritsList = vampire.getMerits();
-        
-        for(String merit : meritsList) {
+               
+        for(String merit : vampire.getMerits()) {
             result += "<tr>";
             result += "<td>" + merit + ": ";
             result += "<td>" + vampire.getMeritDots(merit);

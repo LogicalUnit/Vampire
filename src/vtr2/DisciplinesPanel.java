@@ -19,10 +19,8 @@ public class DisciplinesPanel extends JPanel {
     public void refresh(Character vampire) {
         
         String result = "<html><table>";
-        
-        ArrayList<String> disciplinesList = vampire.getDisciplines();
-        
-        for (String discipline : disciplinesList) {
+               
+        for (String discipline : vampire.getDisciplines()) {
             result += "<tr>";
             result += "<td>" + discipline + ": ";
             result += "<td>" + vampire.getDisciplineDots(discipline);

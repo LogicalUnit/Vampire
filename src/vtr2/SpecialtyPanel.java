@@ -23,14 +23,11 @@ public class SpecialtyPanel extends JPanel {
     
     public void refresh(Character vampire) {
         
-        String result = "<html><table>";
+        String result = "<html><table>";       
         
-        ArrayList<String> skillsList = Skills.getList();
-        
-        for (String skill : skillsList) {
-            ArrayList<String> specialtiesList = vampire.getSpecialties(skill);
-            
-            for(String specialty : specialtiesList) {
+        for (String skill : Skills.getList()) {
+           
+            for(String specialty : vampire.getSpecialties(skill)) {
                 result += "<tr>";
                 result += "<td>" + skill + ": ";
                 result += "<td>" + specialty;
