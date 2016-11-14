@@ -15,6 +15,7 @@ public class Ventrue extends Character {
     public void customSetup() {
         attributes.put(Attributes.PRESENCE, Dots.TWO);
         skills.put(Skills.PERSUASION, Dots.TWO);
+        skills.put(Skills.COMPUTER, Dots.FOUR);
         //Disciplines
         disciplines.put(Disciplines.DOMINATE, Dots.THREE);
         

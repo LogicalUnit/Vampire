@@ -20,9 +20,11 @@ public class SkillsPanel extends JPanel {
     
     private JLabel skillsLab = new JLabel();
     private String type;
+    private int penalty;
     
-    public SkillsPanel(Character vampire, String type) {
+    public SkillsPanel(Character vampire, String type, int penalty) {
         this.type = type;
+        this.penalty = penalty;
         add(skillsLab);
         refresh(vampire);           
     }
@@ -30,7 +32,8 @@ public class SkillsPanel extends JPanel {
     public void refresh(Character vampire) {
        
         String result = "<html>";
-                result += "<center>" + type.toUpperCase() + "</center>";
+                result += "<center>" + type.toUpperCase() + "<br>";
+                result += "(" + penalty + " unskilled)" + "</center>";
                 result += "<table>";
         
         for (String skill : Skills.getList()) {
