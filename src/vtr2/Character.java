@@ -49,6 +49,12 @@ public class Character {
         return result;
     }
     
+    public ArrayList<String> getDisciplines() {
+        ArrayList<String> result = new ArrayList<String>();
+        result.addAll(disciplines.keySet());
+        return result;
+    }
+    
     public Character() {
         setup();
         customSetup();
@@ -76,7 +82,7 @@ public class Character {
         specialties.add(new Specialty(Skills.ACADEMICS, "Libraries"));
         
         //Disciplines
-        disciplines.put(Disciplines.DOMINATE, Dots.THREE);
+        disciplines.put(Disciplines.AUSPEX, Dots.THREE);
         
 
         //Merits

@@ -8,6 +8,9 @@ package vtr2;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import java.util.ArrayList;
+import java.awt.BorderLayout;
+//import javax.swing.BorderFactory;
+import java.awt.Component;
 
 /**
  *
@@ -16,12 +19,20 @@ import java.util.ArrayList;
 public class SkillsPanel extends JPanel {
     
     private JLabel skillsLab = new JLabel();
+    private JLabel title = new JLabel();
     private String type;
     
     public SkillsPanel(String type, Character vampire) {
         this.type = type;
+//        setBorder(BorderFactory.createTitledBorder(type));
+        title.setText(type.toUpperCase());
+        
+//        setLayout(new BorderLayout());
+//        title.setAlignmentX(Component.CENTER_ALIGNMENT);
+        //add(title, BorderLayout.NORTH);
         add(skillsLab);
-        refresh(vampire);       
+        refresh(vampire);   
+        
     }
     
     public void refresh(Character vampire) {

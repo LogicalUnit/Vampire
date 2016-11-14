@@ -27,6 +27,7 @@ public class Gui implements Runnable {
     private SkillsPanel mentalSkills;
     private SkillsPanel physicalSkills;
     private SkillsPanel socialSkills;
+    private DisciplinesPanel disciplines;
     //private Character vampire = new Character();
     //private Character vampire = new Ventrue();
     private Character vampire; 
@@ -45,30 +46,29 @@ public class Gui implements Runnable {
                 
         attributes = new AttributesPanel(vampire);
         mentalSkills = new SkillsPanel(Skills.Types.MENTAL, vampire);
-        mentalSkills.setBorder(BorderFactory.createTitledBorder("Mental"));
-//        mentalSkills.setAlignmentX(Component.LEFT_ALIGNMENT);
         physicalSkills = new SkillsPanel(Skills.Types.PHYSICAL, vampire);
-        physicalSkills.setBorder(BorderFactory.createTitledBorder("Physical"));
-//        physicalSkills.setAlignmentX(Component.LEFT_ALIGNMENT);
         socialSkills = new SkillsPanel(Skills.Types.SOCIAL, vampire);
-        socialSkills.setBorder(BorderFactory.createTitledBorder("Social"));
-//        socialSkills.setAlignmentX(Component.LEFT_ALIGNMENT);
+        disciplines = new DisciplinesPanel(vampire);
         
         JPanel attributesPanel = new JPanel();
-        attributesPanel.setBorder(BorderFactory.createTitledBorder("Attributes"));
+        attributesPanel.setBorder(BorderFactory.createTitledBorder("Attributes".toUpperCase()));
         attributesPanel.add(attributes);
 
         JPanel skillsPanel = new JPanel();
-        skillsPanel.setBorder(BorderFactory.createTitledBorder("Skills"));
+        skillsPanel.setBorder(BorderFactory.createTitledBorder("Skills".toUpperCase()));
         skillsPanel.setLayout(new GridLayout(3,1));
         skillsPanel.add(mentalSkills);
         skillsPanel.add(physicalSkills);
         skillsPanel.add(socialSkills);
         
+        JPanel disciplinesPanel = new JPanel();
+        disciplinesPanel.add(disciplines);
+        
         mainFrame.setLayout(new BorderLayout());
         //mainFrame.add(new JPanel());
         mainFrame.add(attributesPanel, BorderLayout.NORTH);        
         mainFrame.add(skillsPanel, BorderLayout.WEST);
+        mainFrame.add(disciplinesPanel, BorderLayout.CENTER);
         //mainFrame.add(new JPanel());
         
         
