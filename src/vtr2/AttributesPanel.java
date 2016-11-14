@@ -22,29 +22,29 @@ public class AttributesPanel extends JPanel {
         }
     
     public void refresh(Character vampire) {
-        String result = 
-                "<html><table>" +  
-                "<tr>" +
-                "<td>" + //empty
-                "<td>" + Attributes.Cols.MENTAL.toUpperCase() + "<td>" +
-                "<td>" + Attributes.Cols.PHYSICAL.toUpperCase() + "<td>" +
-                "<td>" + Attributes.Cols.SOCIAL.toUpperCase() + "<td>" +                
-                "<tr>" +  
-                "<td>" + Attributes.Rows.POWER.toUpperCase() +
-                "<td>" + attrString(Attributes.INTELLIGENCE, vampire) + 
-                "<td>" + attrString(Attributes.STRENGTH, vampire) + 
-                "<td>" + attrString(Attributes.PRESENCE, vampire) + 
-                "<tr>" +
-                "<td>" + Attributes.Rows.FINESSE.toUpperCase() +
-                "<td>" + attrString(Attributes.WITS, vampire) + 
-                "<td>" + attrString(Attributes.DEXTERITY, vampire) + 
-                "<td>" + attrString(Attributes.MANIPULATION, vampire) + 
-                "<tr>" +
-                "<td>" + Attributes.Rows.RESISTANCE.toUpperCase() +
-                "<td>" + attrString(Attributes.RESOLVE, vampire) + 
-                "<td>" + attrString(Attributes.STAMINA, vampire) + 
-                "<td>" + attrString(Attributes.COMPOSURE, vampire) + 
-                "</table></html>";
+        String result = "<html><table>";
+                
+                result += "<tr>";
+                result += "<td>"; //empty cell
+                result += "<td>" + Attributes.Cols.MENTAL.toUpperCase() + "<td>";
+                result += "<td>" + Attributes.Cols.PHYSICAL.toUpperCase() + "<td>";
+                result += "<td>" + Attributes.Cols.SOCIAL.toUpperCase() + "<td>";               
+                result += "<tr>";
+                result += "<td>" + Attributes.Rows.POWER.toUpperCase();
+                result += "<td>" + attrString(Attributes.INTELLIGENCE, vampire);
+                result += "<td>" + attrString(Attributes.STRENGTH, vampire); 
+                result += "<td>" + attrString(Attributes.PRESENCE, vampire);
+                result += "<tr>";
+                result += "<td>" + Attributes.Rows.FINESSE.toUpperCase();
+                result += "<td>" + attrString(Attributes.WITS, vampire); 
+                result += "<td>" + attrString(Attributes.DEXTERITY, vampire);
+                result += "<td>" + attrString(Attributes.MANIPULATION, vampire);
+                result += "<tr>";
+                result += "<td>" + Attributes.Rows.RESISTANCE.toUpperCase();
+                result += "<td>" + attrString(Attributes.RESOLVE, vampire); 
+                result += "<td>" + attrString(Attributes.STAMINA, vampire);
+                result += "<td>" + attrString(Attributes.COMPOSURE, vampire);
+                result += "</table></html>";
         
         attrLab.setText(result);                
     }
