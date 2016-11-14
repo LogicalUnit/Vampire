@@ -25,9 +25,23 @@ public class Skills {
             
     //Names, Physical
     public static final String ATHLETICS = "Athletics";
+    public static final String BRAWL = "Brawl";
+    public static final String DRIVE = "Drive";
+    public static final String FIREARMS = "Firearms";
+    public static final String LARCENY = "Larceny";
+    public static final String STEALTH = "Stealth";
+    public static final String SURVIVAL = "Survival";
+    public static final String WEAPONRY = "Weaponry";    
     
     //Names, Social
     public static final String ANIMAL_KEN = "Animal Ken";
+    public static final String EMPATHY = "Empathy";
+    public static final String EXPRESION = "Expression";
+    public static final String INTIMIDATION = "Intimidation";
+    public static final String PERSUASION = "Persuasion";
+    public static final String SOCIALISE = "Socialise";
+    public static final String STREETWISE = "Streetwise";
+    public static final String SUBTERFUGE = "Subterfuge";
     
     public class Types {        
         public static final String MENTAL = "Mental";
@@ -48,8 +62,22 @@ public class Skills {
         skills.add(SCIENCE);
         
         skills.add(ATHLETICS);
+        skills.add(BRAWL);
+        skills.add(DRIVE);
+        skills.add(FIREARMS);
+        skills.add(LARCENY);
+        skills.add(STEALTH);
+        skills.add(SURVIVAL);
+        skills.add(WEAPONRY);
         
         skills.add(ANIMAL_KEN);
+        skills.add(EMPATHY);
+        skills.add(EXPRESION);
+        skills.add(INTIMIDATION);
+        skills.add(PERSUASION);
+        skills.add(SOCIALISE);
+        skills.add(STREETWISE);
+        skills.add(SUBTERFUGE);
         
         return skills;
     }
