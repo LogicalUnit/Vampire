@@ -66,17 +66,12 @@ public class Character {
     }
     
     public void setup() {
-        
-        //Attributes
-//        ArrayList<String> attributesList = Attributes.getList();
-        
+                
         for (String attribute : Attributes.getList()) {
             attributes.put(attribute, Dots.ONE);
         }        
                 
-        //Skills
-//        ArrayList<String> skillsList = Skills.getList();
-        
+     
         for (String skill : Skills.getList()) {
             skills.put(skill, Dots.ZERO);
         }
