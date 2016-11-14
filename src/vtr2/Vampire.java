@@ -18,8 +18,8 @@ public class Vampire {
      */
     public static void main(String[] args) {
         
-        Character gangrel = new Gangrel();
-        Gui test = new Gui(gangrel);
+        Character vampire = new Ventrue();
+        Gui test = new Gui(vampire);
        
 //       ArrayList<String> skills = Skills.getList();
 //       
