@@ -38,7 +38,7 @@ public class Attributes {
     }
     
     public static ArrayList<String> getList() {
-        ArrayList<String> attributes = new ArrayList<String>();
+        ArrayList<String> attributes = new ArrayList<>();
         
         attributes.add(INTELLIGENCE);
         attributes.add(STRENGTH);

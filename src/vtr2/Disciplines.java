@@ -5,6 +5,8 @@
  */
 package vtr2;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author John
@@ -20,4 +22,21 @@ public class Disciplines {
     public static final String PROTEAN = "Protean";
     public static final String RESILIENCE = "Resilience";
     public static final String VIGOR = "Vigor";
+    
+    public static ArrayList<String> getList() {
+        ArrayList<String> disciplines = new ArrayList<>();
+        
+        disciplines.add(ANIMALISM);
+        disciplines.add(AUSPEX);
+        disciplines.add(CELERITY);
+        disciplines.add(DOMINATE);
+        disciplines.add(MAJESTY);
+        disciplines.add(NIGHTMARE);
+        disciplines.add(OBFUSCATE);
+        disciplines.add(PROTEAN);
+        disciplines.add(RESILIENCE);
+        disciplines.add(VIGOR);
+        
+        return disciplines;        
+    }
 }

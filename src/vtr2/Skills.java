@@ -50,7 +50,7 @@ public class Skills {
     }
    
     public static ArrayList<String> getList() {
-        ArrayList<String> skills = new ArrayList<String>();
+        ArrayList<String> skills = new ArrayList<>();
         
         skills.add(ACADEMICS);
         skills.add(COMPUTER);

@@ -11,6 +11,7 @@ package vtr2;
  */
 public class Gangrel extends Character {
     
+    @Override
     public void customSetup() {
         attributes.put(Attributes.STRENGTH, Dots.FOUR);
         skills.put(Skills.ANIMAL_KEN, Dots.THREE);

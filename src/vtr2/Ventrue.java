@@ -10,7 +10,8 @@ package vtr2;
  * @author John
  */
 public class Ventrue extends Character {
-        
+    
+    @Override
     public void customSetup() {
         attributes.put(Attributes.PRESENCE, Dots.TWO);
         skills.put(Skills.PERSUASION, Dots.TWO);

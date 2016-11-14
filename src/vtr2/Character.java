@@ -17,7 +17,7 @@ public class Character {
     DottedTrait disciplines = new DottedTrait();
     DottedTrait merits = new DottedTrait();
     
-    ArrayList<Specialty> specialties = new ArrayList<Specialty>();
+    ArrayList<Specialty> specialties = new ArrayList<>();
     
     public Dots getAttributeDots(String name) {
         return attributes.get(name);
@@ -36,7 +36,7 @@ public class Character {
     }
     
     public ArrayList<String> getSpecialties(String skill) {
-        ArrayList<String> result = new ArrayList<String>();
+        ArrayList<String> result = new ArrayList<>();
         
         for(Specialty spec : specialties) {
             if (spec.skill == skill)
@@ -49,13 +49,13 @@ public class Character {
     }
     
     public ArrayList<String> getDisciplines() {
-        ArrayList<String> result = new ArrayList<String>();
+        ArrayList<String> result = new ArrayList<>();
         result.addAll(disciplines.keySet());
         return result;
     }
     
     public ArrayList<String> getMerits() {
-        ArrayList<String> result = new ArrayList<String>();
+        ArrayList<String> result = new ArrayList<>();
         result.addAll(merits.keySet());
         return result;
     }
@@ -72,8 +72,7 @@ public class Character {
         
         for (String attribute : attributesList) {
             attributes.put(attribute, Dots.ONE);
-        }
-        
+        }        
                 
         //Skills
         ArrayList<String> skillsList = Skills.getList();
@@ -82,12 +81,7 @@ public class Character {
             skills.put(skill, Dots.ZERO);
         }
         
-                        
-        
-        
-        
-               
-                                
+                                                                                               
     }
     
     //Override me with custom attributes, skills, etc.
