@@ -20,16 +20,13 @@ public class DisciplinesPanel extends JPanel {
         
         String result = "<html><table>";
         
-        ArrayList<String> disciplines = vampire.getDisciplines();
+        ArrayList<String> disciplinesList = vampire.getDisciplines();
         
-        for (int i = 0; i < disciplines.size(); i++) {
-            
-            String name = disciplines.get(i);
-            
+        for (String discipline : disciplinesList) {
             result += "<tr>";
-            result += "<td>" + name + ": ";
-            result += "<td>" + vampire.getDisciplineDots(name);
-        }
+            result += "<td>" + discipline + ": ";
+            result += "<td>" + vampire.getDisciplineDots(discipline);
+        }       
         
         result += "</table></html>";
         

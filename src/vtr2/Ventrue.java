@@ -12,12 +12,14 @@ package vtr2;
 public class Ventrue extends Character {
         
     public void customSetup() {
-        attributes.put(Attributes.PRESENCE, Dots.THREE);
-        skills.put(Skills.PERSUASION, Dots.FOUR);
+        attributes.put(Attributes.PRESENCE, Dots.TWO);
+        skills.put(Skills.PERSUASION, Dots.TWO);
         //Disciplines
         disciplines.put(Disciplines.DOMINATE, Dots.THREE);
         
         specialties.add(new Specialty(Skills.COMPUTER, "Software Engineering"));        
+        
+        merits.put(Merits.BLOODHOUND, Dots.THREE);
                 
     }
 }

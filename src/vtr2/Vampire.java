@@ -18,7 +18,7 @@ public class Vampire {
      */
     public static void main(String[] args) {
         
-        Character vampire = new Gangrel();
+        Character vampire = new Ventrue();
         Gui test = new Gui(vampire);
        
 //       ArrayList<String> skills = Skills.getList();

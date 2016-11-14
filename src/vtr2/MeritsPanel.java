@@ -27,16 +27,13 @@ public class MeritsPanel extends JPanel {
         
         String result = "<html><table>";
         
-        ArrayList<String> merits = vampire.getMerits();
+        ArrayList<String> meritsList = vampire.getMerits();
         
-        for (int i = 0; i < merits.size(); i++) {
-            String name = merits.get(i);
-            
+        for(String merit : meritsList) {
             result += "<tr>";
-            result += "<td>" + name + ": ";
-            result += "<td>" + vampire.getMeritDots(name);
-                        
-        }
+            result += "<td>" + merit + ": ";
+            result += "<td>" + vampire.getMeritDots(merit);
+        }                
         
         result += "</table></html>";
         

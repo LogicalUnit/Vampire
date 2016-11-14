@@ -39,10 +39,7 @@ public class SkillsPanel extends JPanel {
         ArrayList<String> skillsList = Skills.getList();
         String result = "<html><table>";
         
-        for(int i = 0; i < skillsList.size(); i++) {
-            
-            String skill = skillsList.get(i);
-            
+        for (String skill : skillsList) {
             if (Skills.getSkillType(skill) == type) {
                 
                 result += "<tr>";
@@ -50,8 +47,7 @@ public class SkillsPanel extends JPanel {
                 result += "<td width=\"40\">" + vampire.getSkillDots(skill);
                         
             }
-                        
-        }
+        }             
         
         result += "</table></html>";
         skillsLab.setText(result);

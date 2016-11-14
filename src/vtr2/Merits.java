@@ -12,5 +12,6 @@ package vtr2;
 public class Merits {
     
     public static final String ACUTE_SENSES = "Acute Senses";
+    public static final String BLOODHOUND = "Bloodhound";
     
 }
