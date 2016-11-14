@@ -36,7 +36,7 @@ public class Skills {
     //Names, Social
     public static final String ANIMAL_KEN = "Animal Ken";
     public static final String EMPATHY = "Empathy";
-    public static final String EXPRESION = "Expression";
+    public static final String EXPRESSION = "Expression";
     public static final String INTIMIDATION = "Intimidation";
     public static final String PERSUASION = "Persuasion";
     public static final String SOCIALISE = "Socialise";
@@ -72,7 +72,7 @@ public class Skills {
         
         skills.add(ANIMAL_KEN);
         skills.add(EMPATHY);
-        skills.add(EXPRESION);
+        skills.add(EXPRESSION);
         skills.add(INTIMIDATION);
         skills.add(PERSUASION);
         skills.add(SOCIALISE);
@@ -94,9 +94,23 @@ public class Skills {
             case POLITICS:
             case SCIENCE: return Types.MENTAL;
             
-            case ATHLETICS: return Types.PHYSICAL;
+            case ATHLETICS: 
+            case BRAWL:
+            case DRIVE:
+            case FIREARMS:
+            case LARCENY:
+            case STEALTH: 
+            case SURVIVAL:
+            case WEAPONRY: return Types.PHYSICAL;
             
-            case ANIMAL_KEN: return Types.SOCIAL;
+            case ANIMAL_KEN:
+            case EMPATHY:
+            case EXPRESSION:
+            case INTIMIDATION: 
+            case PERSUASION: 
+            case SOCIALISE:
+            case STREETWISE: 
+            case SUBTERFUGE: return Types.SOCIAL;
                                                         
         }
         
