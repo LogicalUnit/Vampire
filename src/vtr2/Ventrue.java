@@ -19,7 +19,7 @@ public class Ventrue extends Character {
         
         specialties.add(new Specialty(Skills.COMPUTER, "Software Engineering"));        
         
-        merits.put(Merits.BLOODHOUND, Dots.THREE);
+        merits.put(Merits.BLOODHOUND, Dots.TWO);
                 
     }
 }

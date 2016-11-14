@@ -52,9 +52,8 @@ public class Gui implements Runnable {
         disciplines = new DisciplinesPanel(vampire);
         merits = new MeritsPanel(vampire);
         
-        JPanel attributesPanel = new JPanel();
-        attributesPanel.setBorder(BorderFactory.createTitledBorder("Attributes".toUpperCase()));
-        attributesPanel.add(attributes);
+
+        attributes.setBorder(BorderFactory.createTitledBorder("Attributes".toUpperCase()));
 
         JPanel skillsPanel = new JPanel();
         skillsPanel.setBorder(BorderFactory.createTitledBorder("Skills".toUpperCase()));
@@ -63,19 +62,12 @@ public class Gui implements Runnable {
         skillsPanel.add(physicalSkills);
         skillsPanel.add(socialSkills);
         
-        JPanel disciplinesPanel = new JPanel();
-        disciplinesPanel.add(disciplines);
-        
-        JPanel meritsPanel = new JPanel();
-        meritsPanel.add(merits);
-        
-        mainFrame.setLayout(new BorderLayout());
-        //mainFrame.add(new JPanel());
-        mainFrame.add(attributesPanel, BorderLayout.NORTH);        
+       
+        mainFrame.setLayout(new BorderLayout());       
+        mainFrame.add(attributes, BorderLayout.NORTH);        
         mainFrame.add(skillsPanel, BorderLayout.WEST);
-        mainFrame.add(disciplinesPanel, BorderLayout.CENTER);
-        mainFrame.add(meritsPanel, BorderLayout.EAST);
-        //mainFrame.add(new JPanel());
+        mainFrame.add(disciplines, BorderLayout.CENTER);
+        mainFrame.add(merits, BorderLayout.EAST);        
         
         
         
