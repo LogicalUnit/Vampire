@@ -37,7 +37,9 @@ public class SkillsPanel extends JPanel {
     
     public void refresh(Character vampire) {
         ArrayList<String> skillsList = Skills.getList();
-        String result = "<html><table>";
+        String result = "<html>";
+                result += "<center>" + type.toUpperCase() + "</center>";
+                result += "<table>";
         
         for (String skill : skillsList) {
             if (Skills.getSkillType(skill) == type) {
