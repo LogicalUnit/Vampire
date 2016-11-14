@@ -18,13 +18,14 @@ public class Vampire {
      */
     public static void main(String[] args) {
         
-//        Gui test = new Gui();
+        Character gangrel = new Gangrel();
+        Gui test = new Gui(gangrel);
        
-       ArrayList<String> skills = Skills.getList();
-       
-       for(int i = 0; i < skills.size(); i++) {
-           System.out.println(skills.get(i));
-       }
+//       ArrayList<String> skills = Skills.getList();
+//       
+//       for(int i = 0; i < skills.size(); i++) {
+//           System.out.println(skills.get(i));
+//       }
         
     }
     

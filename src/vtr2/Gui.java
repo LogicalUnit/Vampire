@@ -8,6 +8,7 @@ package vtr2;
 import javax.swing.SwingUtilities;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import java.awt.FlowLayout;
 
 /**
  *
@@ -17,11 +18,16 @@ public class Gui implements Runnable {
     
     private JFrame mainFrame;    
     private AttributesPanel attributes;
+    private SkillsPanel mentalSkills;
+    private SkillsPanel physicalSkills;
+    private SkillsPanel socialSkills;
     //private Character vampire = new Character();
     //private Character vampire = new Ventrue();
-    private Character vampire = new Gangrel();
+    private Character vampire; 
     
-    public Gui () {
+    public Gui (Character vampire) {
+        
+        this.vampire = vampire;
         
         SwingUtilities.invokeLater(this);
         
@@ -32,10 +38,15 @@ public class Gui implements Runnable {
 	mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);       
         
         attributes = new AttributesPanel(vampire);
+        mentalSkills = new SkillsPanel(Skills.Types.MENTAL, vampire);
+        physicalSkills = new SkillsPanel(Skills.Types.PHYSICAL, vampire);
+        socialSkills = new SkillsPanel(Skills.Types.SOCIAL, vampire);        
         
-        //mainFrame.add(new JLabel("test"));
-        
+        mainFrame.setLayout(new FlowLayout());
         mainFrame.add(attributes);
+        mainFrame.add(mentalSkills);
+        mainFrame.add(physicalSkills);
+        mainFrame.add(socialSkills);
         
         
         mainFrame.pack();

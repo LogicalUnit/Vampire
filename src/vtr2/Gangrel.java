@@ -13,6 +13,7 @@ public class Gangrel extends Character {
     
     public void customSetup() {
         attributes.put(Attributes.STRENGTH, Dots.FOUR);
+        skills.put(Skills.ANIMAL_KEN, Dots.THREE);
     }
 
 }
