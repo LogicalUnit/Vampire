@@ -17,6 +17,10 @@ public class Gangrel extends Character {
         disciplines.put(Disciplines.ANIMALISM, Dots.TWO);
         //Merits
         merits.put(Merits.ACUTE_SENSES, Dots.ONE);
+        
+        //Specialties        
+        
+        specialties.add(new Specialty(Skills.ACADEMICS, "Libraries"));
     }
 
 }

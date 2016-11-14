@@ -16,6 +16,8 @@ public class Ventrue extends Character {
         skills.put(Skills.PERSUASION, Dots.FOUR);
         //Disciplines
         disciplines.put(Disciplines.DOMINATE, Dots.THREE);
+        
+        specialties.add(new Specialty(Skills.COMPUTER, "Software Engineering"));        
                 
     }
 }

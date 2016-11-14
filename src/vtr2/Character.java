@@ -38,13 +38,20 @@ public class Character {
     public ArrayList<String> getSpecialties(String skill) {
         ArrayList<String> result = new ArrayList<String>();
         
-        for (int i = 0; i < specialties.size(); i++) {
-            Specialty spec = specialties.get(i);
+        for(Specialty spec : specialties) {
             if (spec.skill == skill)
             {
                 result.add(spec.name);
             }
         }
+        
+//        for (int i = 0; i < specialties.size(); i++) {
+//            Specialty spec = specialties.get(i);
+//            if (spec.skill == skill)
+//            {
+//                result.add(spec.name);
+//            }
+//        }
         
         return result;
     }
@@ -71,26 +78,23 @@ public class Character {
         //Attributes
         ArrayList<String> attributesList = Attributes.getList();
         
-        for(int i = 0; i < attributesList.size(); i++) {
-            attributes.put(attributesList.get(i), Dots.ONE);
+        for (String attribute : attributesList) {
+            attributes.put(attribute, Dots.ONE);
         }
+        
                 
         //Skills
         ArrayList<String> skillsList = Skills.getList();
         
-        for(int i = 0; i < skillsList.size(); i++) {
-            skills.put(skillsList.get(i), Dots.ZERO);
+        for (String skill : skillsList) {
+            skills.put(skill, Dots.ZERO);
         }
+        
                         
-        //Specialties        
-        specialties.add(new Specialty(Skills.COMPUTER, "Software Engineering"));
-        specialties.add(new Specialty(Skills.COMPUTER, "Reverse Engineering"));
-        specialties.add(new Specialty(Skills.ACADEMICS, "Libraries"));
         
         
         
-
-        
+               
                                 
     }
     
