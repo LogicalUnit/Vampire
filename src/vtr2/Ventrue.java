@@ -18,6 +18,7 @@ public class Ventrue extends Character {
         disciplines.put(Disciplines.DOMINATE, Dots.THREE);
         
         specialties.add(new Specialty(Skills.COMPUTER, "Software Engineering"));        
+        specialties.add(new Specialty(Skills.COMPUTER, "Reverse Engineering")); 
         
         merits.put(Merits.BLOODHOUND, Dots.TWO);
                 

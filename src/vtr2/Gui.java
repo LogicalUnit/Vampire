@@ -29,7 +29,7 @@ public class Gui implements Runnable {
     private SkillsPanel socialSkills;
     private DisciplinesPanel disciplines;
     private MeritsPanel merits;
-    
+    private SpecialtyPanel specialties;
     private Character vampire; 
     
     public Gui (Character vampire) {
@@ -50,6 +50,7 @@ public class Gui implements Runnable {
         socialSkills = new SkillsPanel(vampire, Skills.Types.SOCIAL);
         disciplines = new DisciplinesPanel(vampire);
         merits = new MeritsPanel(vampire);
+        specialties = new SpecialtyPanel(vampire);
         
 
         attributes.setBorder(BorderFactory.createTitledBorder("Attributes".toUpperCase()));
@@ -65,8 +66,9 @@ public class Gui implements Runnable {
         mainFrame.setLayout(new BorderLayout());       
         mainFrame.add(attributes, BorderLayout.NORTH);        
         mainFrame.add(skillsPanel, BorderLayout.WEST);
-        mainFrame.add(disciplines, BorderLayout.CENTER);
-        mainFrame.add(merits, BorderLayout.EAST);        
+        mainFrame.add(disciplines, BorderLayout.CENTER);        
+        mainFrame.add(merits, BorderLayout.EAST);       
+        mainFrame.add(specialties, BorderLayout.SOUTH);
         
         
         

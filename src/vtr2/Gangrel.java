@@ -21,6 +21,8 @@ public class Gangrel extends Character {
         //Specialties        
         
         specialties.add(new Specialty(Skills.ACADEMICS, "Libraries"));
+        specialties.add(new Specialty(Skills.BRAWL, "Drunken Boxing"));
+        specialties.add(new Specialty(Skills.FIREARMS, "Rifles"));
     }
 
 }
