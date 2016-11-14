@@ -39,7 +39,7 @@ public class Character {
         ArrayList<String> result = new ArrayList<>();
         
         for(Specialty spec : specialties) {
-            if (spec.skill == skill)
+            if (spec.skill.equals(skill))
             {
                 result.add(spec.name);
             }
@@ -68,16 +68,16 @@ public class Character {
     public void setup() {
         
         //Attributes
-        ArrayList<String> attributesList = Attributes.getList();
+//        ArrayList<String> attributesList = Attributes.getList();
         
-        for (String attribute : attributesList) {
+        for (String attribute : Attributes.getList()) {
             attributes.put(attribute, Dots.ONE);
         }        
                 
         //Skills
-        ArrayList<String> skillsList = Skills.getList();
+//        ArrayList<String> skillsList = Skills.getList();
         
-        for (String skill : skillsList) {
+        for (String skill : Skills.getList()) {
             skills.put(skill, Dots.ZERO);
         }
         

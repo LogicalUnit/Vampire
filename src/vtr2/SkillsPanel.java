@@ -37,7 +37,7 @@ public class SkillsPanel extends JPanel {
                 result += "<table>";
         
         for (String skill : Skills.getList()) {
-            if (Skills.getSkillType(skill) == type) {
+            if (Skills.getSkillType(skill).equals(type)) {
                 
                 result += "<tr>";
                 result += "<td width=\"100\">" + skill + ":";
