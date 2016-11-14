@@ -46,9 +46,9 @@ public class Gui implements Runnable {
 	mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);       
                 
         attributes = new AttributesPanel(vampire);
-        mentalSkills = new SkillsPanel(Skills.Types.MENTAL, vampire);
-        physicalSkills = new SkillsPanel(Skills.Types.PHYSICAL, vampire);
-        socialSkills = new SkillsPanel(Skills.Types.SOCIAL, vampire);
+        mentalSkills = new SkillsPanel(vampire, Skills.Types.MENTAL);
+        physicalSkills = new SkillsPanel(vampire, Skills.Types.PHYSICAL);
+        socialSkills = new SkillsPanel(vampire, Skills.Types.SOCIAL);
         disciplines = new DisciplinesPanel(vampire);
         merits = new MeritsPanel(vampire);
         

@@ -22,7 +22,7 @@ public class SkillsPanel extends JPanel {
     private JLabel title = new JLabel();
     private String type;
     
-    public SkillsPanel(String type, Character vampire) {
+    public SkillsPanel(Character vampire, String type) {
         this.type = type;
 //        setBorder(BorderFactory.createTitledBorder(type));
         title.setText(type.toUpperCase());
