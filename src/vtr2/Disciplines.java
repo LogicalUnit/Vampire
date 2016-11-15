@@ -23,6 +23,10 @@ public class Disciplines {
     public static final String RESILIENCE = "Resilience";
     public static final String VIGOR = "Vigor";
     
+    public class Meta {
+        public static final String NAME = "Disciplines";
+    }
+    
     public static ArrayList<String> getList() {
         ArrayList<String> disciplines = new ArrayList<>();
         

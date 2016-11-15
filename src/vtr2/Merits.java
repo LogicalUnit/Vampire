@@ -14,4 +14,8 @@ public class Merits {
     public static final String ACUTE_SENSES = "Acute Senses";
     public static final String BLOODHOUND = "Bloodhound";
     
+    public class Meta  {
+        public static final String NAME = "Merits";
+    }
+    
 }

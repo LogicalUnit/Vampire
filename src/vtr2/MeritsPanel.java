@@ -7,8 +7,8 @@ package vtr2;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;
-import java.util.ArrayList;
-
+//import java.util.ArrayList;
+import javax.swing.BorderFactory;
 
 /**
  *
@@ -19,8 +19,14 @@ public class MeritsPanel extends JPanel {
     private JLabel meritsLabel = new JLabel();
     
     public MeritsPanel(Character vampire) {
+        setBorder(BorderFactory.createTitledBorder(Merits.Meta.NAME.toUpperCase()));    
         add(meritsLabel);
         refresh(vampire);
+    }
+    
+    private String meritString(String merit, Character vampire) {
+        String result = "<td width=100>" + merit + ":<td>" + vampire.getMeritDots(merit);
+        return result;
     }
     
     public void refresh(Character vampire) {
@@ -28,9 +34,7 @@ public class MeritsPanel extends JPanel {
         String result = "<html><table>";
                
         for(String merit : vampire.getMerits()) {
-            result += "<tr>";
-            result += "<td>" + merit + ": ";
-            result += "<td>" + vampire.getMeritDots(merit);
+            result += "<tr>" + meritString(merit, vampire);
         }                
         
         result += "</table></html>";

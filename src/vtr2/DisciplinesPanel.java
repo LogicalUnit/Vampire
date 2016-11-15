@@ -8,6 +8,7 @@ package vtr2;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import java.util.ArrayList;
+import javax.swing.BorderFactory;
 
 /**
  *
@@ -16,14 +17,17 @@ import java.util.ArrayList;
 public class DisciplinesPanel extends JPanel {
     private JLabel disciplineLabel = new JLabel();
     
+    private String disciplineString(String discipline, Character vampire) {
+        String result = "<td width=100>" + discipline + ":<td>" + vampire.getDisciplineDots(discipline);
+        return result;
+    }
+    
     public void refresh(Character vampire) {
         
         String result = "<html><table>";
                
         for (String discipline : vampire.getDisciplines()) {
-            result += "<tr>";
-            result += "<td>" + discipline + ": ";
-            result += "<td>" + vampire.getDisciplineDots(discipline);
+            result += "<tr>" + disciplineString(discipline, vampire);           
         }       
         
         result += "</table></html>";
@@ -32,6 +36,7 @@ public class DisciplinesPanel extends JPanel {
     }
     
     public DisciplinesPanel(Character vampire) {
+        setBorder(BorderFactory.createTitledBorder(Disciplines.Meta.NAME.toUpperCase()));    
         add(disciplineLabel);
         refresh(vampire);
     }
