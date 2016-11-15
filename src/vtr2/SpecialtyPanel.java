@@ -8,6 +8,7 @@ package vtr2;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import java.util.ArrayList;
+import javax.swing.BorderFactory;
 
 /**
  *
@@ -17,6 +18,7 @@ public class SpecialtyPanel extends JPanel {
     private JLabel specialtyLabel = new JLabel();
     
     public SpecialtyPanel(Character vampire) {
+        setBorder(BorderFactory.createTitledBorder(Specialty.Meta.NAME.toUpperCase()));   
         add(specialtyLabel);
         refresh(vampire);
     }
@@ -28,9 +30,7 @@ public class SpecialtyPanel extends JPanel {
         for (String skill : Skills.getList()) {
            
             for(String specialty : vampire.getSpecialties(skill)) {
-                result += "<tr>";
-                result += "<td>" + skill + ": ";
-                result += "<td>" + specialty;
+                result += "<tr><td width=100>" + skill + ":<td>" + specialty;                
             }
         }
         

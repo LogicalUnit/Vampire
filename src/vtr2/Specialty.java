@@ -18,4 +18,8 @@ public class Specialty {
 
     String skill;
     String name;
+    
+    public class Meta {
+        public static final String NAME = "Specialties";
+    }
 }
