@@ -9,8 +9,10 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import java.util.ArrayList;
 import java.awt.BorderLayout;
+import java.awt.Color;
 //import javax.swing.BorderFactory;
 import java.awt.Component;
+import javax.swing.BorderFactory;
 
 /**
  *
@@ -25,6 +27,7 @@ public class SkillsPanel extends JPanel {
     public SkillsPanel(Character vampire, String type, int penalty) {
         this.type = type;
         this.penalty = penalty;
+        setBorder(BorderFactory.createLineBorder(Color.BLACK));       
         add(skillsLab);
         refresh(vampire);           
     }
