@@ -18,7 +18,7 @@ public class DisciplinesPanel extends JPanel {
     private JLabel disciplineLabel = new JLabel();
     
     private String disciplineString(String discipline, Character vampire) {
-        String result = "<td width=100>" + discipline + ":<td>" + vampire.getDisciplineDots(discipline);
+        String result = "<tr><td width=100>" + discipline + ":<td>" + vampire.getDisciplineDots(discipline);
         return result;
     }
     
@@ -27,7 +27,7 @@ public class DisciplinesPanel extends JPanel {
         String result = "<html><table>";
                
         for (String discipline : vampire.getDisciplines()) {
-            result += "<tr>" + disciplineString(discipline, vampire);           
+            result += disciplineString(discipline, vampire);           
         }       
         
         result += "</table></html>";

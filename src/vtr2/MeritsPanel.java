@@ -25,7 +25,7 @@ public class MeritsPanel extends JPanel {
     }
     
     private String meritString(String merit, Character vampire) {
-        String result = "<td width=100>" + merit + ":<td>" + vampire.getMeritDots(merit);
+        String result = "<tr><td width=100>" + merit + ":<td>" + vampire.getMeritDots(merit);
         return result;
     }
     
@@ -34,7 +34,7 @@ public class MeritsPanel extends JPanel {
         String result = "<html><table>";
                
         for(String merit : vampire.getMerits()) {
-            result += "<tr>" + meritString(merit, vampire);
+            result += meritString(merit, vampire);
         }                
         
         result += "</table></html>";

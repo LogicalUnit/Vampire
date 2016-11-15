@@ -50,7 +50,7 @@ public class SkillsPanel extends JPanel {
     }
     
     private String skillString(String skill, Character vampire) {
-        String result = "<td width=100>" + skill + ":<td>" + vampire.getSkillDots(skill);
+        String result = "<tr><td width=100>" + skill + ":<td>" + vampire.getSkillDots(skill);
         return result;
     }
     
@@ -72,13 +72,13 @@ public class SkillsPanel extends JPanel {
             
             switch (Skills.getSkillType(skill)) {
                 case Skills.Types.MENTAL: 
-                    mentalString += "<tr>" + skillString(skill, vampire);
+                    mentalString += skillString(skill, vampire);
                     break;                    
                 case Skills.Types.PHYSICAL: 
-                    physicalString += "<tr>" + skillString(skill, vampire);
+                    physicalString += skillString(skill, vampire);
                     break;
                 case Skills.Types.SOCIAL: 
-                    socialString += "<tr>" + skillString(skill, vampire);
+                    socialString += skillString(skill, vampire);
                     break;                    
             }
             

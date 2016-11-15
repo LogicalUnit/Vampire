@@ -37,7 +37,7 @@ public class AttributesPanel extends JPanel {
     private AttributesGroup socialGroup = new AttributesGroup();       
     
     private String attributeString(String name, Character vamp) {
-            String result = "<td width=100>" + name + ":<td>" + vamp.getAttributeDots(name);
+            String result = "<tr><td width=100>" + name + ":<td>" + vamp.getAttributeDots(name);
             return result;
         }
     
@@ -52,25 +52,25 @@ public class AttributesPanel extends JPanel {
                     rowLabels.setText(labels);
                     
          String mentalAttributes = "<html><table>";
-                    mentalAttributes += "<tr>" + attributeString(Attributes.INTELLIGENCE, vampire);
-                    mentalAttributes += "<tr>" + attributeString(Attributes.WITS, vampire);
-                    mentalAttributes += "<tr>" + attributeString(Attributes.RESOLVE, vampire);
+                    mentalAttributes += attributeString(Attributes.INTELLIGENCE, vampire);
+                    mentalAttributes += attributeString(Attributes.WITS, vampire);
+                    mentalAttributes += attributeString(Attributes.RESOLVE, vampire);
                     mentalAttributes += "</table></html>";
          
          mentalGroup.setText(mentalAttributes);
          
          String physicalAttributes = "<html><table>";
-                    physicalAttributes += "<tr>" + attributeString(Attributes.STRENGTH, vampire);
-                    physicalAttributes += "<tr>" + attributeString(Attributes.DEXTERITY, vampire); 
-                    physicalAttributes += "<tr>" + attributeString(Attributes.STAMINA, vampire); 
+                    physicalAttributes += attributeString(Attributes.STRENGTH, vampire);
+                    physicalAttributes += attributeString(Attributes.DEXTERITY, vampire); 
+                    physicalAttributes += attributeString(Attributes.STAMINA, vampire); 
                     physicalAttributes += "</table></html>";
          
          physicalGroup.setText(physicalAttributes);
          
          String socialAttributes = "<html><table>";
-                    socialAttributes += "<tr>" + attributeString(Attributes.PRESENCE, vampire); 
-                    socialAttributes += "<tr>" + attributeString(Attributes.MANIPULATION, vampire); 
-                    socialAttributes += "<tr>" + attributeString(Attributes.COMPOSURE, vampire); 
+                    socialAttributes += attributeString(Attributes.PRESENCE, vampire); 
+                    socialAttributes += attributeString(Attributes.MANIPULATION, vampire); 
+                    socialAttributes += attributeString(Attributes.COMPOSURE, vampire); 
                     socialAttributes += "</table></html>";
          
          socialGroup.setText(socialAttributes);
