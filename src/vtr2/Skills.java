@@ -48,6 +48,10 @@ public class Skills {
         public static final String PHYSICAL = "Physical";
         public static final String SOCIAL = "Social";
     }
+    
+    public class Meta {
+        public static final String NAME = "Skills";
+    }
    
     public static ArrayList<String> getList() {
         ArrayList<String> skills = new ArrayList<>();
