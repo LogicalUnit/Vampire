@@ -24,8 +24,6 @@ public class SkillsPanel extends JPanel {
     public class SkillsGroup extends JPanel {
         
         JLabel textLabel = new JLabel();
-//        private String type;
-//        private int penalty;
         
         public void setText(String text) {
             textLabel.setText(text);
@@ -36,19 +34,7 @@ public class SkillsPanel extends JPanel {
             add(textLabel);            
         }
     
-    }
-                 
-//    private JLabel skillsLab = new JLabel();
-//    private String type;
-//    private int penalty;
-//    
-//    public SkillsPanel(Character vampire, String type, int penalty) {
-//        this.type = type;
-//        this.penalty = penalty;
-//        setBorder(BorderFactory.createLineBorder(Color.BLACK));       
-//        add(skillsLab);
-//        refresh(vampire);           
-//    }
+    }               
     
     private SkillsGroup mentalGroup = new SkillsGroup();
     private SkillsGroup physicalGroup = new SkillsGroup();
@@ -104,26 +90,7 @@ public class SkillsPanel extends JPanel {
         
         mentalGroup.setText(mentalString);
         physicalGroup.setText(physicalString);
-        socialGroup.setText(socialString);
-        
-       
-//        String result = "<html>";
-//                result += "<center>" + type.toUpperCase() + "<br>";
-//                result += "(" + penalty + " unskilled)" + "</center>";
-//                result += "<table>";
-//        
-//        for (String skill : Skills.getList()) {
-//            if (Skills.getSkillType(skill).equals(type)) {
-//                
-//                result += "<tr>";
-//                result += "<td width=\"100\">" + skill + ":";
-//                result += "<td width=\"40\">" + vampire.getSkillDots(skill);
-//                        
-//            }
-//        }             
-//        
-//        result += "</table></html>";
-//        skillsLab.setText(result);
+        socialGroup.setText(socialString);        
         
     }
     
