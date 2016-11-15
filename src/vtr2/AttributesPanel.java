@@ -80,6 +80,7 @@ public class AttributesPanel extends JPanel {
                     socialAttributes += attrString(Attributes.MANIPULATION, vampire);
                     socialAttributes += "<tr>";
                     socialAttributes += attrString(Attributes.COMPOSURE, vampire);
+                    socialAttributes += "</table></html>";
          
          socialGroup.setText(socialAttributes);
                 

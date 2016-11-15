@@ -29,9 +29,7 @@ public class Gui implements Runnable {
     private SkillsPanel physicalSkillsPanel;
     private SkillsPanel socialSkillsPanel;
     private DisciplinesPanel disciplinesPanel;
-    private MeritsPanel meritsPanel;
-    //private Character vampire = new Character();
-    //private Character vampire = new Ventrue();
+    private MeritsPanel meritsPanel;    
 
     private Character vampire; 
     
