@@ -28,7 +28,7 @@ public class Gui implements Runnable {
     private SkillsPanel skillsPanel;
     private DisciplinesPanel disciplinesPanel;
     private MeritsPanel meritsPanel;   
-    private SpecialtyPanel specialtyPanel;
+    private SpecialtiesPanel specialtiesPanel;
 
     private Character vampire; 
     
@@ -48,7 +48,7 @@ public class Gui implements Runnable {
         skillsPanel = new SkillsPanel(vampire);
         disciplinesPanel = new DisciplinesPanel(vampire);
         meritsPanel = new MeritsPanel(vampire);
-        specialtyPanel = new SpecialtyPanel(vampire);
+        specialtiesPanel = new SpecialtiesPanel(vampire);
         
         
         mainFrame.setLayout(new BorderLayout());
@@ -56,7 +56,7 @@ public class Gui implements Runnable {
         mainFrame.add(skillsPanel, BorderLayout.WEST);                              
         mainFrame.add(disciplinesPanel, BorderLayout.CENTER);
         mainFrame.add(meritsPanel, BorderLayout.EAST);
-        mainFrame.add(specialtyPanel, BorderLayout.SOUTH);
+        mainFrame.add(specialtiesPanel, BorderLayout.SOUTH);
        
 
         mainFrame.pack();

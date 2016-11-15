@@ -14,10 +14,10 @@ import javax.swing.BorderFactory;
  *
  * @author John
  */
-public class SpecialtyPanel extends JPanel {
+public class SpecialtiesPanel extends JPanel {
     private JLabel specialtyLabel = new JLabel();
     
-    public SpecialtyPanel(Character vampire) {
+    public SpecialtiesPanel(Character vampire) {
         setBorder(BorderFactory.createTitledBorder(Specialty.Meta.NAME.toUpperCase()));   
         add(specialtyLabel);
         refresh(vampire);
