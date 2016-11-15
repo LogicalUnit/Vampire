@@ -43,11 +43,11 @@ public class AttributesPanel extends JPanel {
     
     public void refresh(Character vampire) {
         
-          String labels = "<html>";
-                    labels += Attributes.Rows.POWER + ":<br>";
-                    labels += Attributes.Rows.FINESSE + ":<br>";
-                    labels += Attributes.Rows.RESISTANCE + ":";
-                    labels += "</html>";
+          String labels = "<html><table>";
+                    labels += "<tr><td>" + Attributes.Rows.POWER;
+                    labels += "<tr><td>" + Attributes.Rows.FINESSE;
+                    labels += "<tr><td>" + Attributes.Rows.RESISTANCE;
+                    labels += "</table></html>";
                     
                     rowLabels.setText(labels);
                     
