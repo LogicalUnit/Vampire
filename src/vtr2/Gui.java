@@ -25,9 +25,10 @@ public class Gui implements Runnable {
     private JFrame mainFrame;    
 
     private AttributesPanel attributesPanel;
-    private SkillsPanel mentalSkillsPanel;
-    private SkillsPanel physicalSkillsPanel;
-    private SkillsPanel socialSkillsPanel;
+    private SkillsPanel skillsPanel;
+//    private SkillsPanel mentalSkillsPanel;
+//    private SkillsPanel physicalSkillsPanel;
+//    private SkillsPanel socialSkillsPanel;
     private DisciplinesPanel disciplinesPanel;
     private MeritsPanel meritsPanel;    
 
@@ -46,20 +47,21 @@ public class Gui implements Runnable {
 	mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);       
                 
         attributesPanel = new AttributesPanel(vampire);
-        mentalSkillsPanel = new SkillsPanel(vampire, Skills.Types.MENTAL, -3);
-        physicalSkillsPanel = new SkillsPanel(vampire, Skills.Types.PHYSICAL, -1);
-        socialSkillsPanel = new SkillsPanel(vampire, Skills.Types.SOCIAL, -1);
+        skillsPanel = new SkillsPanel(vampire);
+//        mentalSkillsPanel = new SkillsPanel(vampire, Skills.Types.MENTAL, -3);
+//        physicalSkillsPanel = new SkillsPanel(vampire, Skills.Types.PHYSICAL, -1);
+//        socialSkillsPanel = new SkillsPanel(vampire, Skills.Types.SOCIAL, -1);
         disciplinesPanel = new DisciplinesPanel(vampire);
         meritsPanel = new MeritsPanel(vampire);
 
         attributesPanel.setBorder(BorderFactory.createTitledBorder(Attributes.Meta.NAME.toUpperCase()));
 
-        JPanel skillsPanel = new JPanel();
-        skillsPanel.setBorder(BorderFactory.createTitledBorder(Skills.Meta.NAME.toUpperCase()));
-        skillsPanel.setLayout(new GridLayout(3,1));
-        skillsPanel.add(mentalSkillsPanel);
-        skillsPanel.add(physicalSkillsPanel);
-        skillsPanel.add(socialSkillsPanel);
+//        JPanel skillsPanel = new JPanel();
+//        skillsPanel.setBorder(BorderFactory.createTitledBorder(Skills.Meta.NAME.toUpperCase()));
+//        skillsPanel.setLayout(new GridLayout(3,1));
+//        skillsPanel.add(mentalSkillsPanel);
+//        skillsPanel.add(physicalSkillsPanel);
+//        skillsPanel.add(socialSkillsPanel);
         
 
 
