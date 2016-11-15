@@ -37,7 +37,7 @@ public class AttributesPanel extends JPanel {
     private AttributesGroup socialGroup = new AttributesGroup();       
     
     private String attrString(String name, Character vamp) {
-            String result = "<td>" + name + ":<td>" + vamp.getAttributeDots(name);
+            String result = "<td width=100>" + name + ":<td>" + vamp.getAttributeDots(name);
             return result;
         }
     

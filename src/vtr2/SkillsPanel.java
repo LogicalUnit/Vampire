@@ -50,7 +50,7 @@ public class SkillsPanel extends JPanel {
     }
     
     private String skillString(String skill, Character vampire) {
-        String result = "<td>" + skill + ":<td>" + vampire.getSkillDots(skill);
+        String result = "<td width=100>" + skill + ":<td>" + vampire.getSkillDots(skill);
         return result;
     }
     
