@@ -26,9 +26,6 @@ public class Gui implements Runnable {
 
     private AttributesPanel attributesPanel;
     private SkillsPanel skillsPanel;
-//    private SkillsPanel mentalSkillsPanel;
-//    private SkillsPanel physicalSkillsPanel;
-//    private SkillsPanel socialSkillsPanel;
     private DisciplinesPanel disciplinesPanel;
     private MeritsPanel meritsPanel;    
 
@@ -48,23 +45,10 @@ public class Gui implements Runnable {
                 
         attributesPanel = new AttributesPanel(vampire);
         skillsPanel = new SkillsPanel(vampire);
-//        mentalSkillsPanel = new SkillsPanel(vampire, Skills.Types.MENTAL, -3);
-//        physicalSkillsPanel = new SkillsPanel(vampire, Skills.Types.PHYSICAL, -1);
-//        socialSkillsPanel = new SkillsPanel(vampire, Skills.Types.SOCIAL, -1);
         disciplinesPanel = new DisciplinesPanel(vampire);
         meritsPanel = new MeritsPanel(vampire);
-
-        attributesPanel.setBorder(BorderFactory.createTitledBorder(Attributes.Meta.NAME.toUpperCase()));
-
-//        JPanel skillsPanel = new JPanel();
-//        skillsPanel.setBorder(BorderFactory.createTitledBorder(Skills.Meta.NAME.toUpperCase()));
-//        skillsPanel.setLayout(new GridLayout(3,1));
-//        skillsPanel.add(mentalSkillsPanel);
-//        skillsPanel.add(physicalSkillsPanel);
-//        skillsPanel.add(socialSkillsPanel);
         
-
-
+        
         mainFrame.setLayout(new BorderLayout());
         mainFrame.add(attributesPanel, BorderLayout.NORTH);        
         mainFrame.add(skillsPanel, BorderLayout.WEST);                              
