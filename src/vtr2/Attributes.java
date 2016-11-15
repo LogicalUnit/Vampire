@@ -37,6 +37,10 @@ public class Attributes {
         public static final String SOCIAL = "Social";
     }
     
+    public class Meta {
+        public static final String NAME = "Attributes";
+    }
+    
     public static ArrayList<String> getList() {
         ArrayList<String> attributes = new ArrayList<String>();
         

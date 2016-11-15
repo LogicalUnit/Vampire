@@ -23,12 +23,12 @@ import javax.swing.JPanel;
 public class Gui implements Runnable {
     
     private JFrame mainFrame;    
-    private AttributesPanel attributes;
-    private SkillsPanel mentalSkills;
-    private SkillsPanel physicalSkills;
-    private SkillsPanel socialSkills;
-    private DisciplinesPanel disciplines;
-    private MeritsPanel merits;
+    private AttributesPanel attributesPanel;
+    private SkillsPanel mentalSkillsPanel;
+    private SkillsPanel physicalSkillsPanel;
+    private SkillsPanel socialSkillsPanel;
+    private DisciplinesPanel disciplinesPanel;
+    private MeritsPanel meritsPanel;
     //private Character vampire = new Character();
     //private Character vampire = new Ventrue();
     private Character vampire; 
@@ -45,40 +45,29 @@ public class Gui implements Runnable {
         mainFrame = new JFrame("Vampire");
 	mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);       
                 
-        attributes = new AttributesPanel(vampire);
-        mentalSkills = new SkillsPanel(Skills.Types.MENTAL, vampire);
-        physicalSkills = new SkillsPanel(Skills.Types.PHYSICAL, vampire);
-        socialSkills = new SkillsPanel(Skills.Types.SOCIAL, vampire);
-        disciplines = new DisciplinesPanel(vampire);
-        merits = new MeritsPanel(vampire);
+        attributesPanel = new AttributesPanel(vampire);
+        mentalSkillsPanel = new SkillsPanel(Skills.Types.MENTAL, vampire);
+        physicalSkillsPanel = new SkillsPanel(Skills.Types.PHYSICAL, vampire);
+        socialSkillsPanel = new SkillsPanel(Skills.Types.SOCIAL, vampire);
+        disciplinesPanel = new DisciplinesPanel(vampire);
+        meritsPanel = new MeritsPanel(vampire);
         
-        JPanel attributesPanel = new JPanel();
-        attributesPanel.setBorder(BorderFactory.createTitledBorder("Attributes".toUpperCase()));
-        attributesPanel.add(attributes);
+        attributesPanel.setBorder(BorderFactory.createTitledBorder(Attributes.Meta.NAME.toUpperCase()));
 
         JPanel skillsPanel = new JPanel();
-        skillsPanel.setBorder(BorderFactory.createTitledBorder("Skills".toUpperCase()));
+        skillsPanel.setBorder(BorderFactory.createTitledBorder(Skills.Meta.NAME.toUpperCase()));
         skillsPanel.setLayout(new GridLayout(3,1));
-        skillsPanel.add(mentalSkills);
-        skillsPanel.add(physicalSkills);
-        skillsPanel.add(socialSkills);
+        skillsPanel.add(mentalSkillsPanel);
+        skillsPanel.add(physicalSkillsPanel);
+        skillsPanel.add(socialSkillsPanel);
         
-        JPanel disciplinesPanel = new JPanel();
-        disciplinesPanel.add(disciplines);
-        
-        JPanel meritsPanel = new JPanel();
-        meritsPanel.add(merits);
-        
+
         mainFrame.setLayout(new BorderLayout());
-        //mainFrame.add(new JPanel());
         mainFrame.add(attributesPanel, BorderLayout.NORTH);        
         mainFrame.add(skillsPanel, BorderLayout.WEST);
         mainFrame.add(disciplinesPanel, BorderLayout.CENTER);
         mainFrame.add(meritsPanel, BorderLayout.EAST);
-        //mainFrame.add(new JPanel());
-        
-        
-        
+       
         
         mainFrame.pack();
 	mainFrame.setVisible(true);
