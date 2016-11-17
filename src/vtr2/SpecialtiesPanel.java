@@ -30,7 +30,7 @@ public class SpecialtiesPanel extends JPanel {
         for (String skill : Skills.getList()) {
            
             for(String specialty : vampire.getSpecialties(skill)) {
-                result += "<tr><td width=100>" + skill + ":<td>" + specialty;                
+                result += "<tr><td>" + skill + ":<td>" + specialty;                
             }
         }
         

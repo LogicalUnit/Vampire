@@ -7,12 +7,14 @@ package vtr2;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+import javax.swing.BoxLayout;
 import java.util.ArrayList;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.Color;
-//import javax.swing.BorderFactory;
+import java.awt.Dimension;
 import java.awt.Component;
+import javax.swing.Box;
 import javax.swing.BorderFactory;
 
 /**
@@ -42,9 +44,12 @@ public class SkillsPanel extends JPanel {
     
     public SkillsPanel(Character vampire) {
          setBorder(BorderFactory.createTitledBorder(Skills.Meta.NAME.toUpperCase()));    
-         setLayout(new FlowLayout());
+         //setLayout(new FlowLayout());
+         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
          add(mentalGroup);
+         add(Box.createRigidArea(new Dimension(5,7)));
          add(physicalGroup);
+         add(Box.createRigidArea(new Dimension(5,7)));
          add(socialGroup);
          refresh(vampire);
     }
