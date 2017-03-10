@@ -17,12 +17,12 @@ import javax.swing.BorderFactory;
 public class DisciplinesPanel extends JPanel {
     private JLabel disciplineLabel = new JLabel();
     
-    private String disciplineString(String discipline, Character vampire) {
+    private String disciplineString(String discipline, Vampire vampire) {
         String result = "<tr><td width=100>" + discipline + ":<td>" + vampire.getDisciplineDots(discipline);
         return result;
     }
     
-    public void refresh(Character vampire) {
+    public void refresh(Vampire vampire) {
         
         String result = "<html><table>";
                
@@ -35,7 +35,7 @@ public class DisciplinesPanel extends JPanel {
         disciplineLabel.setText(result);
     }
     
-    public DisciplinesPanel(Character vampire) {
+    public DisciplinesPanel(Vampire vampire) {
         setBorder(BorderFactory.createTitledBorder(Disciplines.Meta.NAME.toUpperCase()));    
         add(disciplineLabel);
         refresh(vampire);

@@ -9,7 +9,7 @@ package vtr2;
  *
  * @author John
  */
-public class Ventrue extends Character {
+public class Ventrue extends Vampire {
     
     @Override
     public void customSetup() {
@@ -19,8 +19,8 @@ public class Ventrue extends Character {
         //Disciplines
         disciplines.put(Disciplines.DOMINATE, Dots.THREE);
         
-        specialties.add(new Specialty(Skills.COMPUTER, "Software Engineering"));        
-        specialties.add(new Specialty(Skills.COMPUTER, "Reverse Engineering")); 
+        specialties.addSpecialty(Skills.COMPUTER, "Software Engineering");        
+        specialties.addSpecialty(Skills.COMPUTER, "Reverse Engineering"); 
         
         merits.put(Merits.BLOODHOUND, Dots.TWO);
                 

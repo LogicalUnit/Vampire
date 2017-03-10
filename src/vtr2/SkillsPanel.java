@@ -42,7 +42,7 @@ public class SkillsPanel extends JPanel {
     private SkillsGroup physicalGroup = new SkillsGroup();
     private SkillsGroup socialGroup = new SkillsGroup();
     
-    public SkillsPanel(Character vampire) {
+    public SkillsPanel(Vampire vampire) {
          setBorder(BorderFactory.createTitledBorder(Skills.Meta.NAME.toUpperCase()));    
          //setLayout(new FlowLayout());
          setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
@@ -54,12 +54,12 @@ public class SkillsPanel extends JPanel {
          refresh(vampire);
     }
     
-    private String skillString(String skill, Character vampire) {
+    private String skillString(String skill, Vampire vampire) {
         String result = "<tr><td width=100>" + skill + ":<td>" + vampire.getSkillDots(skill);
         return result;
     }
     
-    public void refresh(Character vampire) {
+    public void refresh(Vampire vampire) {
         
         String mentalString = "<html><center>";
                 mentalString += Skills.Types.MENTAL.toUpperCase() + "<br>(-3 unskilled)<br>";

@@ -15,7 +15,7 @@ public class Actions {
         DRAMATIC_FAILURE, FAILURE, SUCCESS, EXCEPTIONAL_SUCCESS;
     }
     
-    public static Result skillCheck(Character character, String attribute, String skill, int modifier) {
+    public static Result skillCheck(Vampire character, String attribute, String skill, int modifier) {
     
         int attribute_dice = character.getAttributeDots(attribute).ordinal();
         int skill_dice = character.getSkillDots(skill).ordinal();
@@ -58,7 +58,7 @@ public class Actions {
     
     }
     
-    public static Result attributeCheck(Character character, String attribute1, String attribute2, int modifier) {
+    public static Result attributeCheck(Vampire character, String attribute1, String attribute2, int modifier) {
         
         int attribute_1_dice = character.getAttributeDots(attribute1).ordinal();
         int attribute_2_dice = character.getAttributeDots(attribute2).ordinal();
@@ -93,10 +93,10 @@ public class Actions {
     }
     
     //Computer Skills    
-    public static Result internetSearch(Character character, int modifier) {        
+    public static Result internetSearch(Vampire character, int modifier) {        
         return skillCheck(character, Attributes.WITS, Skills.COMPUTER, modifier);
     }
-    public static Result programming(Character character, int modifier) {
+    public static Result programming(Vampire character, int modifier) {
         return skillCheck(character, Attributes.INTELLIGENCE, Skills.COMPUTER, modifier);
     }
     

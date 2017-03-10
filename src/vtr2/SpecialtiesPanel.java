@@ -17,13 +17,13 @@ import javax.swing.BorderFactory;
 public class SpecialtiesPanel extends JPanel {
     private JLabel specialtyLabel = new JLabel();
     
-    public SpecialtiesPanel(Character vampire) {
+    public SpecialtiesPanel(Vampire vampire) {
         setBorder(BorderFactory.createTitledBorder(Specialty.Meta.NAME.toUpperCase()));   
         add(specialtyLabel);
         refresh(vampire);
     }
     
-    public void refresh(Character vampire) {
+    public void refresh(Vampire vampire) {
         
         String result = "<html><table>";       
         

@@ -18,18 +18,18 @@ public class MeritsPanel extends JPanel {
     
     private JLabel meritsLabel = new JLabel();
     
-    public MeritsPanel(Character vampire) {
+    public MeritsPanel(Vampire vampire) {
         setBorder(BorderFactory.createTitledBorder(Merits.Meta.NAME.toUpperCase()));    
         add(meritsLabel);
         refresh(vampire);
     }
     
-    private String meritString(String merit, Character vampire) {
+    private String meritString(String merit, Vampire vampire) {
         String result = "<tr><td width=100>" + merit + ":<td>" + vampire.getMeritDots(merit);
         return result;
     }
     
-    public void refresh(Character vampire) {
+    public void refresh(Vampire vampire) {
         
         String result = "<html><table>";
                

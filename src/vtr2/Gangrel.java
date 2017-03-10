@@ -9,7 +9,7 @@ package vtr2;
  *
  * @author John
  */
-public class Gangrel extends Character {
+public class Gangrel extends Vampire {
     
     @Override
     public void customSetup() {
@@ -20,10 +20,10 @@ public class Gangrel extends Character {
         merits.put(Merits.ACUTE_SENSES, Dots.ONE);
         
         //Specialties        
-        
-        specialties.add(new Specialty(Skills.ACADEMICS, "Libraries"));
-        specialties.add(new Specialty(Skills.BRAWL, "Drunken Boxing"));
-        specialties.add(new Specialty(Skills.FIREARMS, "Rifles"));
+                
+        specialties.addSpecialty(Skills.ACADEMICS, "Libraries");
+        specialties.addSpecialty(Skills.BRAWL, "Drunken Boxing");
+        specialties.addSpecialty(Skills.FIREARMS, "Rifles");
     }
 
 }

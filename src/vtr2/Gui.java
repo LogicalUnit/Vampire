@@ -33,9 +33,9 @@ public class Gui implements Runnable {
     private MeritsPanel meritsPanel;   
     private SpecialtiesPanel specialtiesPanel;
 
-    private Character vampire; 
+    private Vampire vampire; 
     
-    public Gui (Character vampire) {
+    public Gui (Vampire vampire) {
         
         this.vampire = vampire;
         

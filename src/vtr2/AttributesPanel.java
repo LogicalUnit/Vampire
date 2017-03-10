@@ -36,12 +36,12 @@ public class AttributesPanel extends JPanel {
     private AttributesGroup physicalGroup = new AttributesGroup();
     private AttributesGroup socialGroup = new AttributesGroup();       
     
-    private String attributeString(String name, Character vamp) {
+    private String attributeString(String name, Vampire vamp) {
             String result = "<tr><td width=100>" + name + ":<td>" + vamp.getAttributeDots(name);
             return result;
         }
     
-    public void refresh(Character vampire) {
+    public void refresh(Vampire vampire) {
         
           String labels = "<html><table>";
                     labels += "<tr><td>" + Attributes.Rows.POWER;
@@ -78,7 +78,7 @@ public class AttributesPanel extends JPanel {
      
     }
     
-    public AttributesPanel(Character vampire) {        
+    public AttributesPanel(Vampire vampire) {        
                 
         setBorder(BorderFactory.createTitledBorder(Attributes.Meta.NAME.toUpperCase()));    
         setLayout(new FlowLayout());
