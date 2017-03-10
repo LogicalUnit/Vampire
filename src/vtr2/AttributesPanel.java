@@ -15,6 +15,9 @@ import javax.swing.BorderFactory;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.Dimension;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import java.util.HashMap;
 
 /**
  *
@@ -22,7 +25,7 @@ import java.awt.Dimension;
  */
 public class AttributesPanel extends JPanel {
     
-    public class Attribute extends JPanel {
+    public class Attribute extends JPanel implements ChangeListener {
         private JLabel label = new JLabel();
         private JSpinner spinner = new JSpinner(new SpinnerListModel(Dots.values()));
         
@@ -31,12 +34,16 @@ public class AttributesPanel extends JPanel {
             this.label.setPreferredSize(new Dimension(80,20));                                    
             add(this.label);
             
+            this.spinner.addChangeListener(this);
             this.spinner.setPreferredSize(new Dimension(80,20));
             add(this.spinner);            
         }
-    }
         
-                       
+        public void stateChanged(ChangeEvent e) {
+            System.out.println(label.getText() + ": " + spinner.getValue());
+        }
+    }
+                
     public AttributesPanel(Vampire vampire) {        
                 
         setBorder(BorderFactory.createTitledBorder(Attributes.Meta.NAME.toUpperCase()));    
