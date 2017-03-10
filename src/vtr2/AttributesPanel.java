@@ -18,6 +18,7 @@ import java.awt.Dimension;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.util.HashMap;
+import java.util.ArrayList;
 
 /**
  *
@@ -43,31 +44,51 @@ public class AttributesPanel extends JPanel {
             Dots dots = (Dots)spinner.getValue();
             vamp.setAttributeDots(label.getText(), dots);           
         }
+        
+        public void refresh(Vampire vamp) {
+            spinner.setValue(vamp.getAttributeDots(label.getText()));
+        }
     }
     
-    private Vampire vamp;
+    private Vampire vamp = new Vampire();
+    ArrayList<Attribute> attributes = new ArrayList<>();
+    
+    public void refresh(Vampire vamp) {
+        this.vamp = vamp;
+        
+        for(Attribute attr : attributes) {
+            attr.refresh(this.vamp);
+        }
+    }
+    
+    private void addAttribute(String name) {
+        Attribute newItem = new Attribute(name);
+        attributes.add(newItem);
+        add(newItem);
+    }
                 
     public AttributesPanel(Vampire vampire) {  
-        
-        this.vamp = vampire;
+               
                 
         setBorder(BorderFactory.createTitledBorder(Attributes.Meta.NAME.toUpperCase()));    
                 
         setLayout(new GridLayout(3,4));
         
         add(new JLabel(Attributes.Rows.POWER));
-        add(new Attribute(Attributes.INTELLIGENCE));
-        add(new Attribute(Attributes.STRENGTH));
-        add(new Attribute(Attributes.PRESENCE));
+        addAttribute(Attributes.INTELLIGENCE);
+        addAttribute(Attributes.STRENGTH);
+        addAttribute(Attributes.PRESENCE);
         
         add(new JLabel(Attributes.Rows.FINESSE));
-        add(new Attribute(Attributes.WITS));
-        add(new Attribute(Attributes.DEXTERITY));
-        add(new Attribute(Attributes.MANIPULATION));
+        addAttribute(Attributes.WITS);
+        addAttribute(Attributes.DEXTERITY);
+        addAttribute(Attributes.MANIPULATION);
         
         add(new JLabel(Attributes.Rows.RESISTANCE));
-        add(new Attribute(Attributes.RESOLVE));
-        add(new Attribute(Attributes.STAMINA));
-        add(new Attribute(Attributes.COMPOSURE));
+        addAttribute(Attributes.RESOLVE);
+        addAttribute(Attributes.STAMINA);
+        addAttribute(Attributes.COMPOSURE);
+        
+        refresh(vampire);
     }    
 }
