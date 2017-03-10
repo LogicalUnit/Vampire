@@ -9,8 +9,12 @@ package vtr2;
 import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+import javax.swing.JSpinner;
+import javax.swing.SpinnerListModel;
 import javax.swing.BorderFactory;
 import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.awt.Dimension;
 
 /**
  *
@@ -18,76 +22,40 @@ import java.awt.FlowLayout;
  */
 public class AttributesPanel extends JPanel {
     
-    public class AttributesGroup extends JPanel {
-        private JLabel textLabel = new JLabel();
+    public class Attribute extends JPanel {
+        private JLabel label = new JLabel();
+        private JSpinner spinner = new JSpinner(new SpinnerListModel(Dots.values()));
         
-        public void setText(String text) {
-            textLabel.setText(text);
-        }
-        
-        public AttributesGroup() {
-            setBorder(BorderFactory.createLineBorder(Color.BLACK));
-            add(textLabel);
+        public Attribute(String label) {
+            this.label.setText(label);
+            this.label.setPreferredSize(new Dimension(80,20));                                    
+            add(this.label);
+            
+            this.spinner.setPreferredSize(new Dimension(80,20));
+            add(this.spinner);            
         }
     }
-
-    private JLabel rowLabels = new JLabel();
-    private AttributesGroup mentalGroup = new AttributesGroup();
-    private AttributesGroup physicalGroup = new AttributesGroup();
-    private AttributesGroup socialGroup = new AttributesGroup();       
-    
-    private String attributeString(String name, Vampire vamp) {
-            String result = "<tr><td width=100>" + name + ":<td>" + vamp.getAttributeDots(name);
-            return result;
-        }
-    
-    public void refresh(Vampire vampire) {
         
-          String labels = "<html><table>";
-                    labels += "<tr><td>" + Attributes.Rows.POWER;
-                    labels += "<tr><td>" + Attributes.Rows.FINESSE;
-                    labels += "<tr><td>" + Attributes.Rows.RESISTANCE;
-                    labels += "</table></html>";
-                    
-                    rowLabels.setText(labels);
-                    
-         String mentalAttributes = "<html><table>";
-                    mentalAttributes += attributeString(Attributes.INTELLIGENCE, vampire);
-                    mentalAttributes += attributeString(Attributes.WITS, vampire);
-                    mentalAttributes += attributeString(Attributes.RESOLVE, vampire);
-                    mentalAttributes += "</table></html>";
-         
-         mentalGroup.setText(mentalAttributes);
-         
-         String physicalAttributes = "<html><table>";
-                    physicalAttributes += attributeString(Attributes.STRENGTH, vampire);
-                    physicalAttributes += attributeString(Attributes.DEXTERITY, vampire); 
-                    physicalAttributes += attributeString(Attributes.STAMINA, vampire); 
-                    physicalAttributes += "</table></html>";
-         
-         physicalGroup.setText(physicalAttributes);
-         
-         String socialAttributes = "<html><table>";
-                    socialAttributes += attributeString(Attributes.PRESENCE, vampire); 
-                    socialAttributes += attributeString(Attributes.MANIPULATION, vampire); 
-                    socialAttributes += attributeString(Attributes.COMPOSURE, vampire); 
-                    socialAttributes += "</table></html>";
-         
-         socialGroup.setText(socialAttributes);
-                
-     
-    }
-    
+                       
     public AttributesPanel(Vampire vampire) {        
                 
         setBorder(BorderFactory.createTitledBorder(Attributes.Meta.NAME.toUpperCase()));    
-        setLayout(new FlowLayout());
-        add(rowLabels);
-        add(mentalGroup);
-        add(physicalGroup);
-        add(socialGroup);
+                
+        setLayout(new GridLayout(3,4));
         
-        refresh(vampire);             
-    }
-    
+        add(new JLabel(Attributes.Rows.POWER));
+        add(new Attribute(Attributes.INTELLIGENCE));
+        add(new Attribute(Attributes.STRENGTH));
+        add(new Attribute(Attributes.PRESENCE));
+        
+        add(new JLabel(Attributes.Rows.FINESSE));
+        add(new Attribute(Attributes.WITS));
+        add(new Attribute(Attributes.DEXTERITY));
+        add(new Attribute(Attributes.MANIPULATION));
+        
+        add(new JLabel(Attributes.Rows.RESISTANCE));
+        add(new Attribute(Attributes.RESOLVE));
+        add(new Attribute(Attributes.STAMINA));
+        add(new Attribute(Attributes.COMPOSURE));
+    }    
 }

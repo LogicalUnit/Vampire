@@ -25,16 +25,32 @@ public class Vampire {
         return attributes.get(name);
     }
     
+    public void setAttributeDots(String attribute, Dots dots) {
+        attributes.put(attribute, dots);
+    }
+    
     public Dots getSkillDots(String name) {
         return skills.get(name);
+    }
+    
+    public void setSkillDots(String skill, Dots dots) {
+        skills.put(skill, dots);
     }
     
     public Dots getDisciplineDots(String name) {
         return disciplines.get(name);
     }
     
+    public void setDisciplineDots(String discipline, Dots dots) {
+        disciplines.put(discipline, dots);
+    }
+    
     public Dots getMeritDots(String name) {
         return merits.get(name);
+    }
+    
+    public void setMeritDots(String merit, Dots dots) {
+        merits.put(merit, dots);
     }
     
     public ArrayList<String> getSpecialties(String skill) {
@@ -63,8 +79,8 @@ public class Vampire {
                 
         for (String attribute : Attributes.getList()) {
             attributes.put(attribute, Dots.ONE);
-        }        
-                
+        }                        
+     
      
         for (String skill : Skills.getList()) {
             skills.put(skill, Dots.ZERO);
