@@ -39,12 +39,17 @@ public class AttributesPanel extends JPanel {
             add(this.spinner);            
         }
         
-        public void stateChanged(ChangeEvent e) {
-            System.out.println(label.getText() + ": " + spinner.getValue());
+        public void stateChanged(ChangeEvent e) {                       
+            Dots dots = (Dots)spinner.getValue();
+            vamp.setAttributeDots(label.getText(), dots);           
         }
     }
+    
+    private Vampire vamp;
                 
-    public AttributesPanel(Vampire vampire) {        
+    public AttributesPanel(Vampire vampire) {  
+        
+        this.vamp = vampire;
                 
         setBorder(BorderFactory.createTitledBorder(Attributes.Meta.NAME.toUpperCase()));    
                 
