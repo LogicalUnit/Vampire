@@ -18,8 +18,7 @@ public class Vampire {
     DottedTrait merits = new DottedTrait();
     
     SpecialtiesList specialties = new SpecialtiesList();
-    
-    //ArrayList<Specialty> specialties = new ArrayList<>();
+      
     
     public Dots getAttributeDots(String name) {
         return attributes.get(name);
@@ -54,8 +53,20 @@ public class Vampire {
     }
     
     public ArrayList<String> getSpecialties(String skill) {
-        ArrayList<String> result = specialties.getSpecialties(skill);                        
+        ArrayList<String> result = new ArrayList<>();
+        
+        for(Specialty spec : specialties) {
+            if (spec.skill.equals(skill))
+            {
+                result.add(spec.specialty);
+            }
+        }       
+        
         return result;
+    }
+    
+    public void addSpecialty(String skill, String specialty) {
+        specialties.add(new Specialty(skill, specialty));
     }
     
     public ArrayList<String> getDisciplines() {

@@ -11,13 +11,13 @@ package vtr2;
  */
 public class Specialty {
        
-    public Specialty(String skill, String name) {
+    public Specialty(String skill, String specialty) {
         this.skill = skill; //The skill to which the specialty applies
-        this.name = name; //The name of the specialty. This can be an arbitrary string.
+        this.specialty = specialty; //The name of the specialty. This can be an arbitrary string.
     }
 
     String skill;
-    String name;
+    String specialty;
     
     public class Meta {
         public static final String NAME = "Specialties";
