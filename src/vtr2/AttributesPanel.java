@@ -46,7 +46,7 @@ public class AttributesPanel extends JPanel {
             vamp.setAttributeDots(label.getText(), dots);           
         }
         
-        public void refresh(Vampire vamp) {
+        public void refresh() {
             spinner.setValue(vamp.getAttributeDots(label.getText()));
         }
     }
@@ -58,7 +58,7 @@ public class AttributesPanel extends JPanel {
         this.vamp = vamp;
         
         for(Attribute attr : attributes) {
-            attr.refresh(this.vamp);
+            attr.refresh();
         }
     }
     
