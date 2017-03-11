@@ -28,16 +28,15 @@ import javax.swing.SwingConstants;
 public class AttributesPanel extends JPanel {
     
     public class Attribute extends JPanel implements ChangeListener {
-        private JLabel label = new JLabel();
-        private JSpinner spinner = new JSpinner(new SpinnerListModel(Dots.values()));                
+        private JLabel label = new JLabel();             
+        private DotSpinner spinner = new DotSpinner();
         
         public Attribute(String label) {            
             this.label.setText(label);            
             this.label.setPreferredSize(new Dimension(80,20));                                    
             add(this.label);
             
-            this.spinner.addChangeListener(this);
-            this.spinner.setPreferredSize(new Dimension(80,20));
+            this.spinner.addChangeListener(this);          
             add(this.spinner);            
         }
         
