@@ -19,6 +19,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.util.HashMap;
 import java.util.ArrayList;
+import javax.swing.SwingConstants;
 
 /**
  *
@@ -28,10 +29,10 @@ public class AttributesPanel extends JPanel {
     
     public class Attribute extends JPanel implements ChangeListener {
         private JLabel label = new JLabel();
-        private JSpinner spinner = new JSpinner(new SpinnerListModel(Dots.values()));
+        private JSpinner spinner = new JSpinner(new SpinnerListModel(Dots.values()));                
         
-        public Attribute(String label) {
-            this.label.setText(label);
+        public Attribute(String label) {            
+            this.label.setText(label);            
             this.label.setPreferredSize(new Dimension(80,20));                                    
             add(this.label);
             
@@ -68,23 +69,22 @@ public class AttributesPanel extends JPanel {
     }
                 
     public AttributesPanel(Vampire vampire) {  
-               
-                
+                               
         setBorder(BorderFactory.createTitledBorder(Attributes.Meta.NAME.toUpperCase()));    
                 
         setLayout(new GridLayout(3,4));
         
-        add(new JLabel(Attributes.Rows.POWER));
+        add(new JLabel(Attributes.Rows.POWER, SwingConstants.CENTER));
         addAttribute(Attributes.INTELLIGENCE);
         addAttribute(Attributes.STRENGTH);
         addAttribute(Attributes.PRESENCE);
         
-        add(new JLabel(Attributes.Rows.FINESSE));
+        add(new JLabel(Attributes.Rows.FINESSE, SwingConstants.CENTER));
         addAttribute(Attributes.WITS);
         addAttribute(Attributes.DEXTERITY);
         addAttribute(Attributes.MANIPULATION);
         
-        add(new JLabel(Attributes.Rows.RESISTANCE));
+        add(new JLabel(Attributes.Rows.RESISTANCE, SwingConstants.CENTER));
         addAttribute(Attributes.RESOLVE);
         addAttribute(Attributes.STAMINA);
         addAttribute(Attributes.COMPOSURE);
