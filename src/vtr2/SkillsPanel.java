@@ -16,6 +16,10 @@ import java.awt.Dimension;
 import java.awt.Component;
 import javax.swing.Box;
 import javax.swing.BorderFactory;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import javax.swing.SwingConstants;
+import java.awt.GridLayout;
 
 /**
  *
@@ -23,80 +27,100 @@ import javax.swing.BorderFactory;
  */
 public class SkillsPanel extends JPanel {
     
-    public class SkillsGroup extends JPanel {
+    public class Skill extends JPanel implements ChangeListener {
+        private JLabel label = new JLabel();             
+        private DotSpinner spinner = new DotSpinner();
         
-        JLabel textLabel = new JLabel();
-        
-        public void setText(String text) {
-            textLabel.setText(text);
+        public Skill(String label) {
+            this.label.setText(label);            
+            this.label.setPreferredSize(new Dimension(80,20));                                    
+            add(this.label);
+            
+            this.spinner.addChangeListener(this);          
+            add(this.spinner);     
         }
         
-        public SkillsGroup() {
-            setBorder(BorderFactory.createLineBorder(Color.BLACK));            
-            add(textLabel);            
+        public void stateChanged(ChangeEvent e) {                       
+            Dots dots = (Dots)spinner.getValue();
+            vamp.setSkillDots(label.getText(), dots);           
         }
+        
+        public void refresh() {
+            spinner.setValue(vamp.getSkillDots(label.getText()));
+        }
+        
+    }
     
-    }               
+    private Vampire vamp = new Vampire();
+    ArrayList<Skill> skills = new ArrayList<>();
     
-    private SkillsGroup mentalGroup = new SkillsGroup();
-    private SkillsGroup physicalGroup = new SkillsGroup();
-    private SkillsGroup socialGroup = new SkillsGroup();
+    private void addSkill(String name, JPanel group) {
+        Skill newItem = new Skill(name);
+        skills.add(newItem);
+        group.add(newItem);        
+    }    
+                  
+    private JPanel mentalGroup = new JPanel();
+    private JPanel physicalGroup = new JPanel();
+    private JPanel socialGroup = new JPanel();
     
     public SkillsPanel(Vampire vampire) {
-         setBorder(BorderFactory.createTitledBorder(Skills.Meta.NAME.toUpperCase()));    
-         //setLayout(new FlowLayout());
-         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+         setBorder(BorderFactory.createTitledBorder(Skills.Meta.NAME.toUpperCase()));           
+         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));                
+         
+         mentalGroup.setLayout(new GridLayout(9,1));
+         mentalGroup.setBorder(BorderFactory.createLineBorder(Color.BLACK)); 
+         mentalGroup.add(new JLabel(Skills.Types.MENTAL.toUpperCase(), SwingConstants.CENTER));   
+         //mentalGroup.add(new JLabel("(-3 Unskilled)", SwingConstants.CENTER));
+         addSkill(Skills.ACADEMICS, mentalGroup);
+         addSkill(Skills.COMPUTER, mentalGroup);
+         addSkill(Skills.CRAFTS, mentalGroup);
+         addSkill(Skills.INVESTIGATION, mentalGroup);
+         addSkill(Skills.MEDECINE, mentalGroup);
+         addSkill(Skills.OCCULT, mentalGroup);
+         addSkill(Skills.POLITICS, mentalGroup);
+         addSkill(Skills.SCIENCE, mentalGroup);                  
          add(mentalGroup);
-         add(Box.createRigidArea(new Dimension(5,7)));
+         
+         physicalGroup.setLayout(new GridLayout(9,1));
+         physicalGroup.setBorder(BorderFactory.createLineBorder(Color.BLACK)); 
+         physicalGroup.add(new JLabel(Skills.Types.PHYSICAL.toUpperCase(), SwingConstants.CENTER));
+         //physicalGroup.add(new JLabel("(-1 Unskilled)", SwingConstants.CENTER));
+         addSkill(Skills.ATHLETICS, physicalGroup);
+         addSkill(Skills.BRAWL, physicalGroup);
+         addSkill(Skills.DRIVE, physicalGroup);
+         addSkill(Skills.FIREARMS, physicalGroup);
+         addSkill(Skills.LARCENY, physicalGroup);
+         addSkill(Skills.STEALTH, physicalGroup);
+         addSkill(Skills.SURVIVAL, physicalGroup);
+         addSkill(Skills.WEAPONRY, physicalGroup);                  
          add(physicalGroup);
-         add(Box.createRigidArea(new Dimension(5,7)));
+         
+         socialGroup.setLayout(new GridLayout(9,1));
+         socialGroup.setBorder(BorderFactory.createLineBorder(Color.BLACK)); 
+         socialGroup.add(new JLabel(Skills.Types.SOCIAL.toUpperCase(), SwingConstants.CENTER));
+         //socialGroup.add(new JLabel("(-1 Unskilled)", SwingConstants.CENTER));
+         addSkill(Skills.ANIMAL_KEN, socialGroup);
+         addSkill(Skills.EMPATHY, socialGroup);
+         addSkill(Skills.EXPRESSION, socialGroup);
+         addSkill(Skills.INTIMIDATION, socialGroup);
+         addSkill(Skills.PERSUASION, socialGroup);
+         addSkill(Skills.SOCIALISE, socialGroup);
+         addSkill(Skills.STREETWISE, socialGroup);
+         addSkill(Skills.SUBTERFUGE, socialGroup);
+         //add(Box.createRigidArea(new Dimension(5,7)));
          add(socialGroup);
+         
          refresh(vampire);
     }
-    
-    private String skillString(String skill, Vampire vampire) {
-        String result = "<tr><td width=100>" + skill + ":<td>" + vampire.getSkillDots(skill);
-        return result;
-    }
-    
+          
     public void refresh(Vampire vampire) {
         
-        String mentalString = "<html><center>";
-                mentalString += Skills.Types.MENTAL.toUpperCase() + "<br>(-3 unskilled)<br>";
-                mentalString += "</center><table>";
-                
-        String physicalString = "<html><center>";
-                physicalString += Skills.Types.PHYSICAL.toUpperCase() + "<br>(-1 unskilled)<br>";
-                physicalString += "</center><table>";
-                
-        String socialString = "<html><center>";
-                socialString += Skills.Types.SOCIAL.toUpperCase() + "<br>(-1 unskilled)<br>";
-                socialString += "</center><table>";
+        this.vamp = vampire;
         
-        for(String skill : Skills.getList()) {
-            
-            switch (Skills.getSkillType(skill)) {
-                case Skills.Types.MENTAL: 
-                    mentalString += skillString(skill, vampire);
-                    break;                    
-                case Skills.Types.PHYSICAL: 
-                    physicalString += skillString(skill, vampire);
-                    break;
-                case Skills.Types.SOCIAL: 
-                    socialString += skillString(skill, vampire);
-                    break;                    
-            }
-            
-        }
-        
-        mentalString += "</table></html>";
-        physicalString += "</table></html>";
-        socialString += "</table></html>";
-        
-        mentalGroup.setText(mentalString);
-        physicalGroup.setText(physicalString);
-        socialGroup.setText(socialString);        
-        
+        for(Skill skill : skills) {
+            skill.refresh();
+        }        
     }
     
 }
