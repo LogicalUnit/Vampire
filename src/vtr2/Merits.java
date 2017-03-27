@@ -20,6 +20,7 @@ public class Merits {
     public class Meta  {
         public static final String NAME = "Merits";
     }
+               
     
     public static ArrayList<String> getList() {
         ArrayList<String> merits = new ArrayList<>();
