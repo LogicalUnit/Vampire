@@ -27,31 +27,17 @@ import java.awt.GridLayout;
  */
 public class SkillsPanel extends JPanel {
     
-    public class Skill extends JPanel implements ChangeListener {
-        private JLabel label = new JLabel();             
-        private DotSpinner spinner = new DotSpinner();
+    public class Skill extends DottedEntry {
         
-        public Skill(String label) {
-            this.label.setText(label);            
-            this.label.setPreferredSize(new Dimension(80,20));                                    
-            add(this.label);
-            
-            this.spinner.addChangeListener(this);          
-            add(this.spinner);     
+        public Skill(String name) {
+            super(name);
         }
         
-        public void stateChanged(ChangeEvent e) {                       
-            Dots dots = (Dots)spinner.getValue();
-            vamp.setSkillDots(label.getText(), dots);           
+        public void refresh(Vampire vamp) {
+            setDots(vamp.getSkillDots(getName()));
         }
-        
-        public void refresh() {
-            spinner.setValue(vamp.getSkillDots(label.getText()));
-        }
-        
     }
     
-    private Vampire vamp = new Vampire();
     ArrayList<Skill> skills = new ArrayList<>();
     
     private void addSkill(String name, JPanel group) {
@@ -114,12 +100,10 @@ public class SkillsPanel extends JPanel {
          refresh(vampire);
     }
           
-    public void refresh(Vampire vampire) {
-        
-        this.vamp = vampire;
+    public void refresh(Vampire vamp) {              
         
         for(Skill skill : skills) {
-            skill.refresh();
+            skill.refresh(vamp);
         }        
     }
     

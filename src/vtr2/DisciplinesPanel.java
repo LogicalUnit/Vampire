@@ -24,105 +24,19 @@ import javax.swing.JButton;
  *
  * @author John
  */
-public class DisciplinesPanel extends JPanel implements ActionListener {
+public class DisciplinesPanel extends JPanel {
     
-    public class Discipline extends JPanel implements ChangeListener {
-               
-        private JLabel label = new JLabel();
-        private DotSpinner spinner = new DotSpinner();
-        
-        
-        public void stateChanged(ChangeEvent e) {                   
-            Dots dots = (Dots)spinner.getValue();                                    
-            vamp.setDisciplineDots(label.getText(), dots);
-        }
-        
-        public void refresh() {
-            Dots dots = vamp.getDisciplineDots(label.getText());
-            
-            if(dots == null) {
-                dots = Dots.ZERO;
-            }
-            
-            spinner.setValue(dots);
-        }
-        
-        public Discipline(String discipline) {
-            label.setText(discipline);
-            label.setPreferredSize(new Dimension(80, 20));
-            
-            spinner.addChangeListener(this);            
-            
-            add(label);
-            add(spinner);
-        }                                       
-    }
+    private JComboBox<Object> combo;
     
-    ArrayList<Discipline> disciplines = new ArrayList<>();    
     private Vampire vamp;
     
-    public void refresh(Vampire vampire) {
-        this.vamp = vampire;
-
-        for (Discipline disc : disciplines) {
-            disc.refresh();
-        }                    
-    }      
-                       
-    
-    
-    public DisciplinesPanel(Vampire vampire) {
-        setBorder(BorderFactory.createTitledBorder(Disciplines.Meta.NAME.toUpperCase()));    
+    public DisciplinesPanel(Vampire vamp) {
+        this.vamp = vamp;
         
-        setLayout(new GridLayout(12,1));
+       combo = new JComboBox<>(Disciplines.getList().toArray());
+                             
         
-        for (String discipline : Disciplines.getList()) {
-            Discipline newItem = new Discipline(discipline);
-            disciplines.add(newItem);
-            add(newItem);            
-        }
-        
-        add(newButton(SHOW_COMMAND));
-        add(newButton(HIDE_COMMAND));
-        
-                
-        refresh(vampire);
+        add(combo);
     }
-    
-    private int visibleDisciplines = 10;
-    private static final String SHOW_COMMAND = "Show";
-    private static final String HIDE_COMMAND = "Hide";
-    
-    private JButton newButton(String command) {
-        JButton button = new JButton(command);
-        button.setActionCommand(command);
-        button.addActionListener(this);
-        return button;
-    }
-    
-    public void actionPerformed(ActionEvent ae) {
         
-        switch(ae.getActionCommand()){
-            case SHOW_COMMAND: 
-                visibleDisciplines++; 
-                if (visibleDisciplines > 10)
-                    visibleDisciplines = 10;
-                break;
-            case HIDE_COMMAND:
-                visibleDisciplines--;
-                if(visibleDisciplines < 0)
-                    visibleDisciplines = 0;
-                break;                        
-        }
-        
-        for(int i = 0; i < 10; i++) {
-            if(i < visibleDisciplines) {
-                disciplines.get(i).setVisible(true);
-            } else {            
-                disciplines.get(i).setVisible(false);
-            }
-        }
-        
-    }
-    
 }

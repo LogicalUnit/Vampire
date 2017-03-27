@@ -27,37 +27,24 @@ import javax.swing.SwingConstants;
  */
 public class AttributesPanel extends JPanel {
     
-    public class Attribute extends JPanel implements ChangeListener {
-        private JLabel label = new JLabel();             
-        private DotSpinner spinner = new DotSpinner();
+    public class Attribute extends DottedEntry {
         
-        public Attribute(String label) {            
-            this.label.setText(label);            
-            this.label.setPreferredSize(new Dimension(80,20));                                    
-            add(this.label);
+        public Attribute(String name) {
+            super(name);
+        }
+        
+        public void refresh(Vampire vamp) {
+            setDots(vamp.getAttributeDots(getName()));            
+        }
+                
+    }       
             
-            this.spinner.addChangeListener(this);          
-            add(this.spinner);            
-        }
-        
-        public void stateChanged(ChangeEvent e) {                       
-            Dots dots = (Dots)spinner.getValue();
-            vamp.setAttributeDots(label.getText(), dots);           
-        }
-        
-        public void refresh() {
-            spinner.setValue(vamp.getAttributeDots(label.getText()));
-        }
-    }
-    
-    private Vampire vamp = new Vampire();
     ArrayList<Attribute> attributes = new ArrayList<>();
     
-    public void refresh(Vampire vamp) {
-        this.vamp = vamp;
+    public void refresh(Vampire vamp) {       
         
         for(Attribute attr : attributes) {
-            attr.refresh();
+            attr.refresh(vamp);
         }
     }
     
