@@ -19,14 +19,7 @@ public class Main {
     public static void main(String[] args) {
         
         Vampire vampire = new Ventrue();
-        Gui test = new Gui(vampire);
-        
-//        ArrayList<String> disciplinesList = Disciplines.getList();
-//        
-//        for(String discipline : disciplinesList) {
-//            System.out.println(discipline);
-//        }
-      
+        Gui test = new Gui(vampire);              
         
     }
     
