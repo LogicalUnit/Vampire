@@ -24,19 +24,64 @@ import javax.swing.JButton;
  *
  * @author John
  */
-public class DisciplinesPanel extends JPanel {
+public class DisciplinesPanel extends JPanel implements ActionListener {
+    
+    public class Discipline extends DottedEntry {
+        
+        public Discipline(String name) {
+            super(name);
+        }
+        
+        public void refresh(Vampire vamp) {
+            setDots(vamp.getDisciplineDots(getName()));
+        }
+    }
+    
     
     private JComboBox<Object> combo;
+    //private JButton button;
+  
+    private ArrayList<Discipline> disciplines = new ArrayList<>();
     
-    private Vampire vamp;
+    public void refresh(Vampire vamp) {
+        
+        removeAll();
+       
+        disciplines.clear();
+        
+        for(String disc : Disciplines.getList()){
+            Dots dots = vamp.getDisciplineDots(disc);
+            
+            if (dots != Dots.ZERO) {
+                Discipline newItem = new Discipline(disc);
+                disciplines.add(newItem);
+                add(newItem);
+                newItem.refresh(vamp);
+            }
+        }
+        
+       //add(button);
+        updateUI();
+    }
+    
+    public void actionPerformed(ActionEvent ae) {
+       refresh(new Gangrel());
+       System.out.println("Button Pushed");
+    }
     
     public DisciplinesPanel(Vampire vamp) {
-        this.vamp = vamp;
+        
+       setLayout(new GridLayout(12,1));
         
        combo = new JComboBox<>(Disciplines.getList().toArray());
                              
-        
-        add(combo);
+       JButton button = new JButton("Change");
+       button.addActionListener(this);
+       //add(combo);
+       
+      
+       refresh(vamp);
+        add(button);
     }
         
 }
