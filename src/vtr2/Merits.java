@@ -5,6 +5,9 @@
  */
 package vtr2;
 
+import java.util.ArrayList;
+
+
 /**
  *
  * @author John
@@ -16,6 +19,15 @@ public class Merits {
     
     public class Meta  {
         public static final String NAME = "Merits";
+    }
+    
+    public static ArrayList<String> getList() {
+        ArrayList<String> merits = new ArrayList<>();
+        
+        merits.add(ACUTE_SENSES);
+        merits.add(BLOODHOUND);
+        
+        return merits;
     }
     
 }

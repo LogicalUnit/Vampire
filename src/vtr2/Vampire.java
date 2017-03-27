@@ -89,12 +89,19 @@ public class Vampire {
     public void setup() {
                 
         for (String attribute : Attributes.getList()) {
-            attributes.put(attribute, Dots.ONE);
-        }                        
-     
+            setAttributeDots(attribute, Dots.ONE);
+        }                             
      
         for (String skill : Skills.getList()) {
-            skills.put(skill, Dots.ZERO);
+            setSkillDots(skill, Dots.ZERO);
+        }
+        
+        for (String disc : Disciplines.getList()) {
+            setDisciplineDots(disc, Dots.ZERO);
+        }
+        
+        for(String merit : Merits.getList()) {
+            setMeritDots(merit, Dots.ZERO);
         }
                                                                                                        
     }

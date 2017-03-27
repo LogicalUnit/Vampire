@@ -17,12 +17,14 @@ import java.util.ArrayList;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.Dimension;
+import javax.swing.JButton;
+
 
 /**
  *
  * @author John
  */
-public class DisciplinesPanel extends JPanel {
+public class DisciplinesPanel extends JPanel implements ActionListener {
     
     public class Discipline extends JPanel implements ChangeListener {
                
@@ -49,7 +51,7 @@ public class DisciplinesPanel extends JPanel {
             label.setText(discipline);
             label.setPreferredSize(new Dimension(80, 20));
             
-            spinner.addChangeListener(this);
+            spinner.addChangeListener(this);            
             
             add(label);
             add(spinner);
@@ -72,15 +74,55 @@ public class DisciplinesPanel extends JPanel {
     public DisciplinesPanel(Vampire vampire) {
         setBorder(BorderFactory.createTitledBorder(Disciplines.Meta.NAME.toUpperCase()));    
         
-        setLayout(new GridLayout(10,1));
+        setLayout(new GridLayout(12,1));
         
         for (String discipline : Disciplines.getList()) {
             Discipline newItem = new Discipline(discipline);
             disciplines.add(newItem);
-            add(newItem);
+            add(newItem);            
         }
+        
+        add(newButton(SHOW_COMMAND));
+        add(newButton(HIDE_COMMAND));
+        
                 
         refresh(vampire);
+    }
+    
+    private int visibleDisciplines = 10;
+    private static final String SHOW_COMMAND = "Show";
+    private static final String HIDE_COMMAND = "Hide";
+    
+    private JButton newButton(String command) {
+        JButton button = new JButton(command);
+        button.setActionCommand(command);
+        button.addActionListener(this);
+        return button;
+    }
+    
+    public void actionPerformed(ActionEvent ae) {
+        
+        switch(ae.getActionCommand()){
+            case SHOW_COMMAND: 
+                visibleDisciplines++; 
+                if (visibleDisciplines > 10)
+                    visibleDisciplines = 10;
+                break;
+            case HIDE_COMMAND:
+                visibleDisciplines--;
+                if(visibleDisciplines < 0)
+                    visibleDisciplines = 0;
+                break;                        
+        }
+        
+        for(int i = 0; i < 10; i++) {
+            if(i < visibleDisciplines) {
+                disciplines.get(i).setVisible(true);
+            } else {            
+                disciplines.get(i).setVisible(false);
+            }
+        }
+        
     }
     
 }
