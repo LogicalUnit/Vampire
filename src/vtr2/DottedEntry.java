@@ -14,19 +14,19 @@ import java.awt.Dimension;
  * @author John
  */
 public class DottedEntry extends JPanel {
-    private JLabel name = new JLabel();
+    private JLabel label = new JLabel();
     private DotSpinner spinner = new DotSpinner();
     
     public DottedEntry(String name) {
-        this.name.setText(name);
-        this.name.setPreferredSize(new Dimension(80,20));
+        this.label.setText(name);
+        this.label.setPreferredSize(new Dimension(80,20));
         
-        add(this.name);
+        add(this.label);
         add(this.spinner);
     }
     
     public String getName() {
-        return name.getText();
+        return label.getText();
     }
     
     public Dots getDots() {
