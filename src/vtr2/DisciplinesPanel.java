@@ -44,6 +44,8 @@ public class DisciplinesPanel extends JPanel implements ActionListener {
         
         removeAll();
         
+        setBorder(BorderFactory.createTitledBorder(Disciplines.Meta.NAME.toUpperCase()));    
+        
         ArrayList<String> choices = new ArrayList<>();
         
         for(DottedEntry disc : disciplines) {

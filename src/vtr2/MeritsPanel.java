@@ -40,6 +40,8 @@ public class MeritsPanel extends JPanel implements ActionListener {
         
         removeAll();
         
+        setBorder(BorderFactory.createTitledBorder(Merits.Meta.NAME.toUpperCase()));    
+        
         ArrayList<String> choices = new ArrayList<>();
         
         for (DottedEntry merit : merits) {
