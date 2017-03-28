@@ -28,8 +28,7 @@ public class DisciplinesPanel extends JPanel implements ActionListener {
         
     
     private JComboBox<Object> combo;      
-    private ArrayList<DottedEntry> disciplines = new ArrayList<>();
-    //private ArrayList<String> choices = new ArrayList<>();
+    private ArrayList<DottedEntry> disciplines = new ArrayList<>();    
     
     public void refresh(Vampire vamp) {
                 
@@ -41,11 +40,10 @@ public class DisciplinesPanel extends JPanel implements ActionListener {
         paint();                     
     }
     
-    public void paint() {
+    private void paint() {
         
         removeAll();
         
-//        choices.clear();
         ArrayList<String> choices = new ArrayList<>();
         
         for(DottedEntry disc : disciplines) {
@@ -95,15 +93,8 @@ public class DisciplinesPanel extends JPanel implements ActionListener {
        } 
         
        setLayout(new GridLayout(12,1));
-       
-      
-        
-       //combo = new JComboBox<>(Disciplines.getList().toArray());
-                             
-       
-      
-       refresh(vamp);
-       //add(combo);
+                                                                   
+       refresh(vamp);     
     }
         
 }
