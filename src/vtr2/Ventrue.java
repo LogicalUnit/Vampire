@@ -22,6 +22,7 @@ public class Ventrue extends Vampire {
         
         //Disciplines
         setDisciplineDots(Disciplines.DOMINATE, Dots.THREE);
+        setDisciplineDots(Disciplines.AUSPEX, Dots.TWO);
         
         //Merits
         setMeritDots(Merits.BLOODHOUND, Dots.TWO);

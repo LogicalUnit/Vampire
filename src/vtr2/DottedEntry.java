@@ -8,6 +8,7 @@ package vtr2;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import java.awt.Dimension;
+import javax.swing.event.ChangeListener;
 
 /**
  *
@@ -36,4 +37,13 @@ public class DottedEntry extends JPanel {
     public void setDots(Dots dots) {
         spinner.setValue(dots);
     }
+    
+    public void refresh(Vampire vamp) {
+        setDots(vamp.getDisciplineDots(getName()));
+        System.out.println("Refresh DottedEntry");
+    }
+    
+//    public void addChangeListener(ChangeListener listener) {
+//        spinner.addChangeListener(listener);
+//    }
 }

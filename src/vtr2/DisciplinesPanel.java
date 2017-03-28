@@ -25,63 +25,84 @@ import javax.swing.JButton;
  * @author John
  */
 public class DisciplinesPanel extends JPanel implements ActionListener {
-    
-    public class Discipline extends DottedEntry {
         
-        public Discipline(String name) {
-            super(name);
-        }
-        
-        public void refresh(Vampire vamp) {
-            setDots(vamp.getDisciplineDots(getName()));
-        }
-    }
     
-    
-    private JComboBox<Object> combo;
-    //private JButton button;
-  
-    private ArrayList<Discipline> disciplines = new ArrayList<>();
+    private JComboBox<Object> combo;      
+    private ArrayList<DottedEntry> disciplines = new ArrayList<>();
+    private ArrayList<String> choices = new ArrayList<>();
     
     public void refresh(Vampire vamp) {
+                
+        
+        for(DottedEntry disc : disciplines) {
+            disc.refresh(vamp);
+        }
+        
+        paint();                     
+    }
+    
+    public void paint() {
         
         removeAll();
-       
-        disciplines.clear();
         
-        for(String disc : Disciplines.getList()){
-            Dots dots = vamp.getDisciplineDots(disc);
-            
-            if (dots != Dots.ZERO) {
-                Discipline newItem = new Discipline(disc);
-                disciplines.add(newItem);
-                add(newItem);
-                newItem.refresh(vamp);
+        choices.clear();
+        
+        for(DottedEntry disc : disciplines) {
+            if(disc.getDots().ordinal() > 0) {
+                add(disc);                
+            } else {
+                choices.add(disc.getName());
             }
         }
         
-       //add(button);
+        combo = new JComboBox<>(choices.toArray());
+        add(combo);
+        
+        JButton button = new JButton("Add Discipline");
+        button.addActionListener(this);
+        add(button);
+        
         updateUI();
     }
     
+    public void fillVampire(Vampire vamp) {
+        
+        for(DottedEntry disc : disciplines) {
+            vamp.setDisciplineDots(disc.getName(), disc.getDots());                        
+        }        
+    }
+        
+    
     public void actionPerformed(ActionEvent ae) {
-       refresh(new Gangrel());
-       System.out.println("Button Pushed");
+       
+        String newDisc = (String)combo.getSelectedItem();
+        
+        for(DottedEntry disc : disciplines) {
+            if (disc.getName().equals(newDisc)) {
+                disc.setDots(Dots.ONE);
+            }
+        }
+        
+        paint();     
     }
     
+    
     public DisciplinesPanel(Vampire vamp) {
+       
+        for(String disc : Disciplines.getList()) {
+           disciplines.add(new DottedEntry(disc));
+       } 
         
        setLayout(new GridLayout(12,1));
+       
+      
         
-       combo = new JComboBox<>(Disciplines.getList().toArray());
+       //combo = new JComboBox<>(Disciplines.getList().toArray());
                              
-       JButton button = new JButton("Change");
-       button.addActionListener(this);
-       //add(combo);
        
       
        refresh(vamp);
-        add(button);
+       //add(combo);
     }
         
 }
