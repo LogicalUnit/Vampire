@@ -26,30 +26,18 @@ import javax.swing.SwingConstants;
  * @author John
  */
 public class AttributesPanel extends JPanel {
-    
-    public class Attribute extends DottedEntry {
-        
-        public Attribute(String name) {
-            super(name);
-        }
-        
-        public void refresh(Vampire vamp) {
-            setDots(vamp.getTraitDots(getName()));            
-        }
-                
-    }       
-            
-    ArrayList<Attribute> attributes = new ArrayList<>();
+              
+    ArrayList<DottedEntry> attributes = new ArrayList<>();
     
     public void refresh(Vampire vamp) {       
         
-        for(Attribute attr : attributes) {
+        for(DottedEntry attr : attributes) {
             attr.refresh(vamp);
         }
     }
     
     private void addAttribute(String name) {
-        Attribute newItem = new Attribute(name);
+        DottedEntry newItem = new DottedEntry(name);
         attributes.add(newItem);
         add(newItem);
     }

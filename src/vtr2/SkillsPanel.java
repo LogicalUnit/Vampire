@@ -27,21 +27,21 @@ import java.awt.GridLayout;
  */
 public class SkillsPanel extends JPanel {
     
-    public class Skill extends DottedEntry {
-        
-        public Skill(String name) {
-            super(name);
-        }
-        
-        public void refresh(Vampire vamp) {
-            setDots(vamp.getTraitDots(getName()));
-        }
-    }
+//    public class Skill extends DottedEntry {
+//        
+//        public Skill(String name) {
+//            super(name);
+//        }
+//        
+//        public void refresh(Vampire vamp) {
+//            setDots(vamp.getTraitDots(getName()));
+//        }
+//    }
     
-    ArrayList<Skill> skills = new ArrayList<>();
+    ArrayList<DottedEntry> skills = new ArrayList<>();
     
     private void addSkill(String name, JPanel group) {
-        Skill newItem = new Skill(name);
+        DottedEntry newItem = new DottedEntry(name);
         skills.add(newItem);
         group.add(newItem);        
     }    
@@ -102,7 +102,7 @@ public class SkillsPanel extends JPanel {
           
     public void refresh(Vampire vamp) {              
         
-        for(Skill skill : skills) {
+        for(DottedEntry skill : skills) {
             skill.refresh(vamp);
         }        
     }
