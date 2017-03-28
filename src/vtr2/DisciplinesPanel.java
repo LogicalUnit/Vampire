@@ -69,7 +69,7 @@ public class DisciplinesPanel extends JPanel implements ActionListener {
     public void fillVampire(Vampire vamp) {
         
         for(DottedEntry disc : disciplines) {
-            vamp.setDisciplineDots(disc.getName(), disc.getDots());                        
+            vamp.setTraitDots(disc.getName(), disc.getDots());                        
         }        
     }
         

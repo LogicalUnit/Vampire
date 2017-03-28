@@ -17,8 +17,8 @@ public class Actions {
     
     public static Result skillCheck(Vampire character, String attribute, String skill, int modifier) {
     
-        int attribute_dice = character.getAttributeDots(attribute).ordinal();
-        int skill_dice = character.getSkillDots(skill).ordinal();
+        int attribute_dice = character.getTraitDots(attribute).ordinal();
+        int skill_dice = character.getTraitDots(skill).ordinal();
         int unskilled_penalty = 0;
         
         if (skill_dice == 0) {
@@ -60,8 +60,8 @@ public class Actions {
     
     public static Result attributeCheck(Vampire character, String attribute1, String attribute2, int modifier) {
         
-        int attribute_1_dice = character.getAttributeDots(attribute1).ordinal();
-        int attribute_2_dice = character.getAttributeDots(attribute2).ordinal();
+        int attribute_1_dice = character.getTraitDots(attribute1).ordinal();
+        int attribute_2_dice = character.getTraitDots(attribute2).ordinal();
         
         int total_dice = attribute_1_dice + attribute_2_dice + modifier;
         

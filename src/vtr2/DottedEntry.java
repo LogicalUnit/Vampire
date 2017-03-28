@@ -39,11 +39,7 @@ public class DottedEntry extends JPanel {
     }
     
     public void refresh(Vampire vamp) {
-        setDots(vamp.getDisciplineDots(getName()));
-        System.out.println("Refresh DottedEntry");
+        setDots(vamp.getTraitDots(getName()));      
     }
     
-//    public void addChangeListener(ChangeListener listener) {
-//        spinner.addChangeListener(listener);
-//    }
 }

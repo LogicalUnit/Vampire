@@ -14,12 +14,16 @@ public class Gangrel extends Vampire {
     @Override
     public void customSetup() {
         //Attributes        
-        setAttributeDots(Attributes.STRENGTH, Dots.FOUR);
-        setSkillDots(Skills.ANIMAL_KEN, Dots.THREE);
-        setDisciplineDots(Disciplines.ANIMALISM, Dots.TWO);
+        setTraitDots(Attributes.STRENGTH, Dots.FOUR);
+        
+        //Skills
+        setTraitDots(Skills.ANIMAL_KEN, Dots.THREE);
+        
+        //Disciplines
+        setTraitDots(Disciplines.ANIMALISM, Dots.TWO);
         
         //Merits
-        setMeritDots(Merits.ACUTE_SENSES, Dots.ONE);
+        setTraitDots(Merits.ACUTE_SENSES, Dots.ONE);
         
         //Specialties                        
         addSpecialty(Skills.ACADEMICS, "Libraries");

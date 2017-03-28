@@ -14,18 +14,18 @@ public class Ventrue extends Vampire {
     @Override
     public void customSetup() {
         //Attributes
-        setAttributeDots(Attributes.PRESENCE, Dots.TWO);
+        setTraitDots(Attributes.PRESENCE, Dots.TWO);
         
         //Skills
-        setSkillDots(Skills.PERSUASION, Dots.TWO);
-        setSkillDots(Skills.COMPUTER, Dots.FOUR);
+        setTraitDots(Skills.PERSUASION, Dots.TWO);
+        setTraitDots(Skills.COMPUTER, Dots.FOUR);
         
         //Disciplines
-        setDisciplineDots(Disciplines.DOMINATE, Dots.THREE);
-        setDisciplineDots(Disciplines.AUSPEX, Dots.TWO);
+        setTraitDots(Disciplines.DOMINATE, Dots.THREE);
+        setTraitDots(Disciplines.AUSPEX, Dots.TWO);
         
         //Merits
-        setMeritDots(Merits.BLOODHOUND, Dots.TWO);
+        setTraitDots(Merits.BLOODHOUND, Dots.TWO);
         
         //Specialties
         addSpecialty(Skills.COMPUTER, "Software Engineering");        

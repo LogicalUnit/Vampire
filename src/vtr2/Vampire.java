@@ -6,6 +6,7 @@
 package vtr2;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 /**
  *
  * @author John
@@ -17,40 +18,49 @@ public class Vampire {
     DottedTrait disciplines = new DottedTrait();
     DottedTrait merits = new DottedTrait();
     
+    HashMap<String,Dots> traits = new HashMap<>();
     SpecialtiesList specialties = new SpecialtiesList();
+    
+    public void setTraitDots(String name, Dots dots) {
+        traits.put(name, dots);
+    }
+    
+    public Dots getTraitDots(String name) {
+        return traits.get(name);
+    }
       
     
-    public Dots getAttributeDots(String name) {
-        return attributes.get(name);
-    }
-    
-    public void setAttributeDots(String attribute, Dots dots) {
-        attributes.put(attribute, dots);
-    }
-    
-    public Dots getSkillDots(String name) {
-        return skills.get(name);
-    }
-    
-    public void setSkillDots(String skill, Dots dots) {
-        skills.put(skill, dots);
-    }
-    
-    public Dots getDisciplineDots(String name) {
-        return disciplines.get(name);
-    }
-    
-    public void setDisciplineDots(String discipline, Dots dots) {
-        disciplines.put(discipline, dots);
-    }
-    
-    public Dots getMeritDots(String name) {
-        return merits.get(name);
-    }
-    
-    public void setMeritDots(String merit, Dots dots) {
-        merits.put(merit, dots);
-    }
+//    public Dots getAttributeDots(String name) {
+//        return attributes.get(name);
+//    }
+//    
+//    public void setAttributeDots(String attribute, Dots dots) {
+//        attributes.put(attribute, dots);
+//    }
+//    
+//    public Dots getSkillDots(String name) {
+//        return skills.get(name);
+//    }
+//    
+//    public void setSkillDots(String skill, Dots dots) {
+//        skills.put(skill, dots);
+//    }
+//    
+//    public Dots getDisciplineDots(String name) {
+//        return disciplines.get(name);
+//    }
+//    
+//    public void setDisciplineDots(String discipline, Dots dots) {
+//        disciplines.put(discipline, dots);
+//    }
+//    
+//    public Dots getMeritDots(String name) {
+//        return merits.get(name);
+//    }
+//    
+//    public void setMeritDots(String merit, Dots dots) {
+//        merits.put(merit, dots);
+//    }
     
     public ArrayList<String> getSpecialties(String skill) {
         ArrayList<String> result = new ArrayList<>();
@@ -69,17 +79,17 @@ public class Vampire {
         specialties.add(new Specialty(skill, specialty));
     }
     
-    public ArrayList<String> getDisciplines() {
-        ArrayList<String> result = new ArrayList<>();
-        result.addAll(disciplines.keySet());
-        return result;
-    }
-    
-    public ArrayList<String> getMerits() {
-        ArrayList<String> result = new ArrayList<>();
-        result.addAll(merits.keySet());
-        return result;
-    }
+//    public ArrayList<String> getDisciplines() {
+//        ArrayList<String> result = new ArrayList<>();
+//        result.addAll(disciplines.keySet());
+//        return result;
+//    }
+//    
+//    public ArrayList<String> getMerits() {
+//        ArrayList<String> result = new ArrayList<>();
+//        result.addAll(merits.keySet());
+//        return result;
+//    }
     
     public Vampire() {
         setup();
@@ -89,19 +99,19 @@ public class Vampire {
     public void setup() {
                 
         for (String attribute : Attributes.getList()) {
-            setAttributeDots(attribute, Dots.ONE);
+            setTraitDots(attribute, Dots.ONE);
         }                             
      
         for (String skill : Skills.getList()) {
-            setSkillDots(skill, Dots.ZERO);
+            setTraitDots(skill, Dots.ZERO);
         }
         
         for (String disc : Disciplines.getList()) {
-            setDisciplineDots(disc, Dots.ZERO);
+            setTraitDots(disc, Dots.ZERO);
         }
         
         for(String merit : Merits.getList()) {
-            setMeritDots(merit, Dots.ZERO);
+            setTraitDots(merit, Dots.ZERO);
         }
                                                                                                        
     }

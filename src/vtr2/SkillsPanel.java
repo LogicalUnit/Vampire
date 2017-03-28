@@ -34,7 +34,7 @@ public class SkillsPanel extends JPanel {
         }
         
         public void refresh(Vampire vamp) {
-            setDots(vamp.getSkillDots(getName()));
+            setDots(vamp.getTraitDots(getName()));
         }
     }
     

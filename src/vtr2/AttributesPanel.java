@@ -34,7 +34,7 @@ public class AttributesPanel extends JPanel {
         }
         
         public void refresh(Vampire vamp) {
-            setDots(vamp.getAttributeDots(getName()));            
+            setDots(vamp.getTraitDots(getName()));            
         }
                 
     }       
