@@ -29,7 +29,7 @@ public class DisciplinesPanel extends JPanel implements ActionListener {
     
     private JComboBox<Object> combo;      
     private ArrayList<DottedEntry> disciplines = new ArrayList<>();
-    private ArrayList<String> choices = new ArrayList<>();
+    //private ArrayList<String> choices = new ArrayList<>();
     
     public void refresh(Vampire vamp) {
                 
@@ -45,7 +45,8 @@ public class DisciplinesPanel extends JPanel implements ActionListener {
         
         removeAll();
         
-        choices.clear();
+//        choices.clear();
+        ArrayList<String> choices = new ArrayList<>();
         
         for(DottedEntry disc : disciplines) {
             if(disc.getDots().ordinal() > 0) {
