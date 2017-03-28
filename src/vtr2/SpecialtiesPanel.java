@@ -9,33 +9,35 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import java.util.ArrayList;
 import javax.swing.BorderFactory;
+import java.awt.GridLayout;
 
 /**
  *
  * @author John
  */
 public class SpecialtiesPanel extends JPanel {
-    private JLabel specialtyLabel = new JLabel();
+    //private JLabel specialtyLabel = new JLabel();
     
     public SpecialtiesPanel(Vampire vampire) {
-        setBorder(BorderFactory.createTitledBorder(Specialty.Meta.NAME.toUpperCase()));   
-        add(specialtyLabel);
+        //setBorder(BorderFactory.createTitledBorder(Specialty.Meta.NAME.toUpperCase()));   
+        //add(specialtyLabel);
+        setLayout(new GridLayout(12,1));
+        
         refresh(vampire);
     }
     
-    public void refresh(Vampire vampire) {
+    public void refresh(Vampire vamp) {
+
+        removeAll();
         
-        String result = "<html><table>";       
-        
-        for (String skill : Skills.getList()) {
-           
-            for(String specialty : vampire.getSpecialties(skill)) {
-                result += "<tr><td>" + skill + ":<td>" + specialty;                
-            }
+        setBorder(BorderFactory.createTitledBorder(Specialty.Meta.NAME.toUpperCase()));        
+                
+        for (Specialty spec : vamp.getSpecialties()) {
+            String text = spec.skill.toUpperCase() + ": " + spec.specialty;
+            add(new JLabel(text));
         }
         
-        result += "</table></html>";
+        updateUI();
         
-        specialtyLabel.setText(result);
     }
 }

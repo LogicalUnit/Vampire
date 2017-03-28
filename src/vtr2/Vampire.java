@@ -25,17 +25,21 @@ public class Vampire {
     }
       
     
-    public ArrayList<String> getSpecialties(String skill) {
-        ArrayList<String> result = new ArrayList<>();
-        
-        for(Specialty spec : specialties) {
-            if (spec.skill.equals(skill))
-            {
-                result.add(spec.specialty);
-            }
-        }       
-        
-        return result;
+//    public ArrayList<String> getSpecialties(String skill) {
+//        ArrayList<String> result = new ArrayList<>();
+//        
+//        for(Specialty spec : specialties) {
+//            if (spec.skill.equals(skill))
+//            {
+//                result.add(spec.specialty);
+//            }
+//        }       
+//        
+//        return result;
+//    }
+    
+    public ArrayList<Specialty> getSpecialties() {
+        return specialties;
     }
     
     public void addSpecialty(String skill, String specialty) {

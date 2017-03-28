@@ -14,7 +14,7 @@ public class Ventrue extends Vampire {
     @Override
     public void customSetup() {
         //Attributes
-        setTraitDots(Attributes.PRESENCE, Dots.TWO);
+        setTraitDots(Attributes.PRESENCE, Dots.FIVE);
         
         //Skills
         setTraitDots(Skills.PERSUASION, Dots.TWO);
